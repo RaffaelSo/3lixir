@@ -1,12 +1,14 @@
+import type { ReactNode } from "react";
+
 import { cn } from "@/lib/utils";
 
 type EyebrowProps = {
-  children: string;
+  children: ReactNode;
   className?: string;
 };
 
 type StatementProps = {
-  children: string;
+  children: ReactNode;
   className?: string;
 };
 

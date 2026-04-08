@@ -15,9 +15,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
       <div className="grid gap-12 lg:gap-16">
         <div className="grid gap-10 lg:grid-cols-[1fr_minmax(0,0.42fr)] lg:items-end lg:gap-20">
           <Reveal className="min-w-0">
-            <Eyebrow>
-              {project.category} · {project.season} {project.year}
-            </Eyebrow>
+            <Eyebrow>{`${project.category} · ${project.season} ${project.year}`}</Eyebrow>
             <h1 className="font-display-editorial mt-6 max-w-[14ch] text-[clamp(3.25rem,8vw,6.5rem)] leading-[0.88] tracking-[-0.055em] text-white">
               {project.title}
             </h1>
