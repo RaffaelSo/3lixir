@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 import { AboutHero } from "@/components/editorial/about-hero";
 import { FinalCtaBand } from "@/components/editorial/final-cta-band";

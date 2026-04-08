@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 import { ContactFormShell } from "@/components/editorial/contact-form-shell";
 import { ContactLinks } from "@/components/editorial/contact-links";

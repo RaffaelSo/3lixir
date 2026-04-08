@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 import { ProjectsMasonryGrid } from "@/components/editorial/projects-masonry-grid";
 import { projects } from "@/data/projects";
