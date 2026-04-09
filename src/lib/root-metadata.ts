@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { openGraphLocale } from "@/lib/i18n-config";
 import { getSiteUrl, siteConfig } from "@/lib/seo-config";
 
 const siteUrl = getSiteUrl();
@@ -21,7 +22,7 @@ export const rootMetadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_GB",
+    locale: openGraphLocale,
     url: siteUrl,
     siteName: siteConfig.brandShort,
     title: siteConfig.ogTitle,

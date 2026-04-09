@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { PageTransition } from "@/components/motion/page-transition";
 import { JsonLdPerson } from "@/components/seo/json-ld-person";
+import { defaultLocale } from "@/lib/i18n-config";
 import { rootMetadata } from "@/lib/root-metadata";
 
 const sans = Inter({
@@ -34,7 +35,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang={defaultLocale}>
       <body
         className={`${sans.variable} ${display.variable} ${mono.variable} bg-background text-foreground antialiased`}
       >

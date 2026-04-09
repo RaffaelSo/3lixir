@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
+import { LocaleSwitchMock } from "@/components/layout/locale-switch-mock";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -65,7 +66,11 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4 sm:gap-5">
+          <LocaleSwitchMock
+            variant="compact"
+            className="hidden md:flex"
+          />
           <Link
             href="/contact"
             className="link-editorial link-editorial-strong hidden md:inline-flex"
@@ -101,6 +106,9 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
+          <div className="mt-10 border-t border-white/[0.07] pt-8">
+            <LocaleSwitchMock variant="full" />
+          </div>
         </div>
       ) : null}
     </header>
