@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Cormorant_Garamond, IBM_Plex_Mono, Inter } from "next/font/google";
 import type { ReactNode } from "react";
 
@@ -54,6 +55,7 @@ export default function RootLayout({
           </PageTransition>
         </div>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
