@@ -22,8 +22,22 @@ export function InstagramSection() {
             Instagram
           </h2>
           <p className="mt-5 text-[0.9375rem] leading-[1.8] tracking-[0.02em] text-white/48">
-            Follow {siteConfig.brandShort} for campaigns, process, and new work —
-            the same visual world as this site, updated in real time.
+            Follow {siteConfig.brandShort} on Instagram for campaigns, process, and
+            new work — the same visual world as this site, updated in real time.
+            Instagram is the primary channel.
+          </p>
+          <p className="mt-6 text-[0.8125rem] leading-[1.75] tracking-[0.02em] text-white/34">
+            Also on{" "}
+            <Link
+              href={siteConfig.tiktokUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/48 underline decoration-white/15 underline-offset-[0.25em] transition duration-500 hover:text-[var(--accent)] hover:decoration-[var(--accent)]"
+            >
+              TikTok @3liksir
+            </Link>
+            {" "}
+            — short clips; Instagram remains the main channel.
           </p>
         </div>
         <p className="shrink-0">

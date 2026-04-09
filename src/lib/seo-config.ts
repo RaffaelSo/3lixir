@@ -38,6 +38,8 @@ export const siteConfig = {
   ogImageAlt:
     "3liksir — couture fashion designer based in Berlin, editorial portrait.",
   instagramUrl: "https://www.instagram.com/3liksir/",
+  /** Secondary social; list in UI only once (homepage social section). */
+  tiktokUrl: "https://www.tiktok.com/@3liksir",
   /** JSON-LD */
   person: {
     name: "3liksir",

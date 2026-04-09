@@ -12,7 +12,7 @@ export function JsonLdPerson() {
     alternateName: siteConfig.person.alternateName,
     jobTitle: siteConfig.person.jobTitle,
     url: getSiteUrl(),
-    sameAs: [siteConfig.instagramUrl],
+    sameAs: [siteConfig.instagramUrl, siteConfig.tiktokUrl],
     address: {
       "@type": "PostalAddress",
       addressLocality: siteConfig.person.addressLocality,
