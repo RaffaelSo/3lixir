@@ -8,7 +8,7 @@ import { VisionStatement } from "@/components/editorial/vision-statement";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Creative positioning, artistic direction, and fashion-world perspective behind 3LIXIR.",
+    "Creative positioning, artistic direction, and fashion-world perspective behind 3liksir.",
 };
 
 export default function AboutPage() {

@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Cormorant_Garamond, IBM_Plex_Mono, Inter } from "next/font/google";
 import type { ReactNode } from "react";
 
@@ -7,6 +6,8 @@ import "./globals.css";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { PageTransition } from "@/components/motion/page-transition";
+import { JsonLdPerson } from "@/components/seo/json-ld-person";
+import { rootMetadata } from "@/lib/root-metadata";
 
 const sans = Inter({
   subsets: ["latin"],
@@ -25,21 +26,7 @@ const mono = IBM_Plex_Mono({
   variable: "--font-mono",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://3lixir.example"),
-  title: {
-    default: "3LIXIR",
-    template: "%s | 3LIXIR",
-  },
-  description:
-    "Creative and image direction for fashion campaigns, editorials, and brand worlds — a digital space built like a cold, cinematic magazine sequence.",
-  openGraph: {
-    title: "3LIXIR",
-    description:
-      "A curated digital editorial space for avant-garde fashion work.",
-    type: "website",
-  },
-};
+export const metadata = rootMetadata;
 
 export default function RootLayout({
   children,
@@ -51,11 +38,10 @@ export default function RootLayout({
       <body
         className={`${sans.variable} ${display.variable} ${mono.variable} bg-background text-foreground antialiased`}
       >
+        <JsonLdPerson />
         <div className="relative isolate min-h-screen overflow-hidden">
           <div className="pointer-events-none fixed inset-0 -z-10">
-            <div className="absolute inset-x-0 top-0 h-[42rem] bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(255,255,255,0.055),transparent_58%)]" />
-            <div className="absolute inset-y-0 right-0 w-[32rem] bg-[radial-gradient(circle,rgba(140,168,205,0.09),transparent_70%)] blur-3xl" />
-            <div className="absolute bottom-0 left-1/4 h-64 w-[min(80%,48rem)] -translate-x-1/2 bg-[radial-gradient(ellipse,rgba(158,182,217,0.06),transparent_70%)] blur-3xl" />
+            <div className="absolute inset-x-0 top-0 h-[min(70vh,36rem)] bg-[radial-gradient(ellipse_70%_55%_at_50%_-15%,rgba(255,255,255,0.035),transparent_62%)]" />
           </div>
 
           <SiteHeader />

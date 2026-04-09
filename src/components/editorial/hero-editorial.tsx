@@ -34,7 +34,7 @@ export function HeroEditorial({ project }: HeroEditorialProps) {
                 </span>
               </h1>
               <p className="mt-10 max-w-md text-[0.9375rem] leading-[1.75] tracking-[0.02em] text-white/48 sm:mt-12">
-                3LIXIR is a digital editorial space for avant-garde fashion
+                3liksir is a digital editorial space for avant-garde fashion
                 image systems — built for agencies, brands, and collaborators
                 who read visual nuance the way others read copy.
               </p>

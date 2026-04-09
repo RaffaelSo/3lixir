@@ -5,7 +5,7 @@ import { ContactLinks } from "@/components/editorial/contact-links";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact 3LIXIR for campaigns, editorials, and creative collaborations.",
+  description: "Contact 3liksir for campaigns, editorials, and creative collaborations.",
 };
 
 export default function ContactPage() {

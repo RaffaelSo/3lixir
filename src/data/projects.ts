@@ -252,7 +252,7 @@ export const projects: Project[] = [
       { label: "Client", value: "Circuit House" },
       { label: "Photography", value: "Vera Nox" },
       { label: "Motion", value: "Frame / Unit" },
-      { label: "Digital", value: "Studio 3LIXIR" },
+      { label: "Digital", value: "Studio 3liksir" },
     ],
     blocks: [
       {

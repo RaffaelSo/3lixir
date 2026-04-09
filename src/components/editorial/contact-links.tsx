@@ -3,19 +3,20 @@ import Link from "next/link";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { Eyebrow, Statement } from "@/components/editorial/typography";
+import { siteConfig } from "@/lib/seo-config";
 
 const links = [
   {
     label: "Email",
-    value: "studio@3lixir.com",
-    href: "mailto:studio@3lixir.com",
+    value: "studio@3liksir.com",
+    href: "mailto:studio@3liksir.com",
   },
   {
     label: "Instagram",
-    value: "@3lixir.studio",
-    href: "https://instagram.com",
+    value: "@3liksir",
+    href: siteConfig.instagramUrl,
   },
-  { label: "Base", value: "Paris / London", href: "#" },
+  { label: "Base", value: "Berlin", href: "#" },
 ];
 
 export function ContactLinks() {

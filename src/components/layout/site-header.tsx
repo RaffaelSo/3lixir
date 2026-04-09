@@ -46,7 +46,7 @@ export function SiteHeader() {
           href="/"
           className="font-[family-name:var(--font-mono)] text-[0.68rem] font-medium uppercase tracking-[0.48em] text-[var(--foreground)]"
         >
-          3LIXIR
+          3liksir
         </Link>
 
         <nav className="hidden items-center gap-10 md:flex lg:gap-12">

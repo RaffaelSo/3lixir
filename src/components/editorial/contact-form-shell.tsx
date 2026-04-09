@@ -57,7 +57,7 @@ export function ContactFormShell() {
               email or CMS workflow.
             </p>
             <Link
-              href="mailto:studio@3lixir.com"
+              href="mailto:studio@3liksir.com"
               className="link-editorial link-editorial-strong"
             >
               Send by email

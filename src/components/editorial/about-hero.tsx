@@ -16,7 +16,7 @@ export function AboutHero() {
 
         <Reveal delay={0.12}>
           <p className="max-w-3xl text-[0.9375rem] leading-[1.8] tracking-[0.02em] text-white/46">
-            3LIXIR develops image systems for fashion labels, editorials, and
+            3liksir develops image systems for fashion labels, editorials, and
             culturally attuned collaborators looking for more presence, more
             mystery, and more visual memory. The output sits between campaign,
             exhibition, and identity design.
