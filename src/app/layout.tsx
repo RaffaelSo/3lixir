@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { Cormorant_Garamond, IBM_Plex_Mono, Inter } from "next/font/google";
 import type { ReactNode } from "react";
 
@@ -52,6 +53,7 @@ export default function RootLayout({
             <SiteFooter />
           </PageTransition>
         </div>
+        <Analytics />
       </body>
     </html>
   );
