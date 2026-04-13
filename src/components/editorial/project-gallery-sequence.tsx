@@ -88,7 +88,7 @@ export function ProjectGallerySequence({
                   src={block.image}
                   alt={block.alt}
                   fill
-                  sizes="100vw"
+                  sizes="(min-width: 1800px) 1720px, 100vw"
                   className="object-cover object-[center_24%] saturate-[0.92]"
                 />
               </figure>

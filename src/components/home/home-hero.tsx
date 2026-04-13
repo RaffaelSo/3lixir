@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Reveal } from "@/components/motion/reveal";
+import { toOptimizedProjectPublicPath } from "@/lib/optimized-project-image";
 
 const tagline =
   "Berlin-based couture fashion / experimental design / styling";
@@ -14,11 +15,13 @@ export function HomeHero() {
     >
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=2000&q=82"
-          alt="Editorial fashion portrait with dramatic light and sculptural silhouette."
+          src={toOptimizedProjectPublicPath(
+            "/images/projects/lookbook/COVERShin Jeong Hoon, @sh1nfoto (16).JPEG",
+          )}
+          alt="Lookbook cover image."
           fill
           priority
-          sizes="100vw"
+          sizes="(min-width: 1720px) 1720px, 100vw"
           className="object-cover object-[center_22%] saturate-[0.88]"
         />
         <div

@@ -8,8 +8,8 @@ import { siteConfig } from "@/lib/seo-config";
 const links = [
   {
     label: "Email",
-    value: "studio@3liksir.com",
-    href: "mailto:studio@3liksir.com",
+    value: "3liksirdesigns@gmail.com",
+    href: "mailto:3liksirdesigns@gmail.com",
   },
   {
     label: "Instagram",

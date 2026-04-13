@@ -1,109 +1,93 @@
 import { Project } from "@/types/project";
+import { toOptimizedProjectPublicPath } from "@/lib/optimized-project-image";
 
-const image = (id: string, width = 1600) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=80`;
+const asset = (slug: string, file: string) =>
+  toOptimizedProjectPublicPath(`/images/projects/${slug}/${file}`);
 
 export const projects: Project[] = [
   {
-    slug: "nocturne-index",
-    title: "Nocturne Index",
-    year: "2026",
-    season: "AW",
+    slug: "cyber-forest",
+    title: "Cyber Forest",
+    year: "2024",
+    season: "Collection",
     role: "Creative Direction",
     category: "Campaign",
-    location: "Paris",
+    location: "Digital Studio",
     excerpt:
-      "A cold after-hours campaign built around lacquered silhouettes, reflective surfaces, and controlled tension.",
+      "A synthetic nature study with high-contrast silhouettes, liquid textures, and speculative styling.",
     statement:
-      "The frame moves like a whisper: distant, severe, and impossible to ignore.",
+      "A forest imagined through code, armor, and organic distortion.",
     description:
-      "Nocturne Index imagines the campaign as an urban ritual of shadow, shine, and calibrated restraint. The imagery is paced like a magazine sequence rather than an ecommerce presentation.",
-    heroImage: image("photo-1496747611176-843222e1e57c"),
-    heroAlt: "Fashion portrait with dark dramatic styling.",
-    mood: "Lacquer, shadow, midnight chrome",
-    tags: ["Campaign", "Casting", "Styling", "Direction"],
+      "Cyber Forest explores a hybrid environment where natural references are re-rendered with digital materiality and editorial pacing.",
+    heroImage: asset("cyber-forest", "COVER032.JPEG"),
+    heroAlt: "Cyber Forest cover image.",
+    mood: "Synthetic nature, polished darkness, future organic",
+    tags: ["Campaign", "Direction", "Editorial"],
     featured: true,
     gridClass: "md:col-span-7 md:row-span-2",
-    credits: [
-      { label: "Client", value: "Maison Oblique" },
-      { label: "Photography", value: "Lena Voss" },
-      { label: "Styling", value: "Iris Vale" },
-      { label: "Beauty", value: "Studio Nera" },
-    ],
+    credits: [{ label: "Project", value: "Cyber Forest" }],
     blocks: [
       {
         type: "statement",
-        text: "A campaign language built from silence, impact, and severe light.",
-        note: "Editorial note",
+        text: "Visual language shaped by speculative ecology and cinematic restraint.",
+        note: "Concept",
         align: "center",
       },
       {
         type: "image",
-        image: image("photo-1496747611176-843222e1e57c", 1800),
-        alt: "Model in dark textured outerwear.",
-        caption: "Lead silhouette study.",
+        image: asset("cyber-forest", "001.JPEG"),
+        alt: "Cyber Forest still 01.",
+        caption: "Opening frame.",
         aspect: "cinema",
       },
       {
         type: "pair",
         images: [
           {
-            image: image("photo-1483985988355-763728e1935b", 1200),
-            alt: "Fashion pose in urban light.",
+            image: asset("cyber-forest", "015.JPEG"),
+            alt: "Cyber Forest still 15.",
           },
           {
-            image: image("photo-1515886657613-9f3515b0c78f", 1200),
-            alt: "Editorial portrait in cool studio lighting.",
+            image: asset("cyber-forest", "IMG_7190.JPG"),
+            alt: "Cyber Forest still IMG_7190.",
           },
         ],
-        caption: "Texture, attitude, and reflective styling studies.",
-      },
-      {
-        type: "image",
-        image: image("photo-1529139574466-a303027c1d8b", 1800),
-        alt: "Portrait with metallic styling and dark background.",
-        caption: "Closing frame for print and motion cover usage.",
-        aspect: "portrait",
+        caption: "Material and silhouette studies.",
       },
     ],
   },
   {
-    slug: "glass-ritual",
-    title: "Glass Ritual",
+    slug: "cyber-wasteland",
+    title: "Cyber Wasteland",
     year: "2025",
-    season: "Resort",
-    role: "Visual Identity",
+    season: "Collection",
+    role: "Image Direction",
     category: "Editorial",
-    location: "Milan",
+    location: "Digital Studio",
     excerpt:
-      "A crystalline editorial sequence where transparency, pale steel, and sculptural movement become the narrative.",
+      "A dystopian image world built from metallic light, ash tones, and post-human silhouettes.",
     statement:
-      "The body is treated as architecture: translucent, sharpened, and lit from within.",
+      "Fashion as survival language in a synthetic ruin.",
     description:
-      "Glass Ritual turns minimal garments and reflective set pieces into an exhibition-like image story. Each composition privileges negative space and icy light.",
-    heroImage: image("photo-1500917293891-ef795e70e1f6"),
-    heroAlt: "Model in pale fashion styling with elegant pose.",
-    mood: "Frost, glass, pale steel",
-    tags: ["Editorial", "Art Direction", "Identity"],
+      "Cyber Wasteland frames darkness and industrial texture as a polished editorial sequence with cinematic depth.",
+    heroImage: asset("cyber-wasteland", "COVER791135893.683925public.JPEG"),
+    heroAlt: "Cyber Wasteland cover image.",
+    mood: "Industrial haze, metallic dusk, controlled decay",
+    tags: ["Editorial", "Direction", "Campaign"],
     featured: true,
     gridClass: "md:col-span-5 md:row-span-1",
-    credits: [
-      { label: "Publication", value: "Atelier Notes" },
-      { label: "Photography", value: "Mara Etienne" },
-      { label: "Set Design", value: "Cold Geometry" },
-      { label: "Casting", value: "Frame Bureau" },
-    ],
+    credits: [{ label: "Project", value: "Cyber Wasteland" }],
     blocks: [
       {
         type: "image",
-        image: image("photo-1500917293891-ef795e70e1f6", 1800),
-        alt: "Fashion portrait with cool tones and modern silhouette.",
+        image: asset("cyber-wasteland", "791135891.077076public.JPEG"),
+        alt: "Cyber Wasteland still 01.",
         caption: "Opening spread.",
         aspect: "cinema",
       },
       {
         type: "statement",
-        text: "Luxury can feel glacial without losing intimacy.",
+        text: "Austere frames with high tension and minimal ornament.",
         note: "Creative thesis",
         align: "left",
       },
@@ -111,236 +95,173 @@ export const projects: Project[] = [
         type: "pair",
         images: [
           {
-            image: image("photo-1487412720507-e7ab37603c6f", 1200),
-            alt: "Portrait in soft architectural light.",
+            image: asset("cyber-wasteland", "791135892.280560public.JPEG"),
+            alt: "Cyber Wasteland still 02.",
           },
           {
-            image: image("photo-1512436991641-6745cdb1723f", 1200),
-            alt: "Editorial close-up with directional styling.",
+            image: asset("cyber-wasteland", "791135893.986964public.JPEG"),
+            alt: "Cyber Wasteland still 03.",
           },
         ],
-        caption: "A study in cool surfaces and softened glamour.",
+        caption: "Light and texture sequence.",
       },
     ],
   },
   {
-    slug: "cold-bloom",
-    title: "Cold Bloom",
-    year: "2024",
-    season: "SS",
-    role: "Image Direction",
-    category: "Campaign",
-    location: "Copenhagen",
+    slug: "arctica-3d",
+    title: "Arctica 3D",
+    year: "2025",
+    season: "Concept",
+    role: "3D Art Direction",
+    category: "Digital Fashion",
+    location: "Virtual Set",
     excerpt:
-      "Organic forms translated into a restrained spring campaign, balancing fragility with engineered precision.",
+      "A fully synthetic image language combining digital garment forms, scene design, and high-gloss rendering.",
     statement:
-      "Softness is edited until it feels intelligent.",
+      "Rendered worlds can carry couture tension when paced editorially.",
     description:
-      "Cold Bloom frames spring dressing through mineral palettes, sparse floral references, and elegant distance. The result is atmospheric rather than romantic.",
-    heroImage: image("photo-1483985988355-763728e1935b"),
-    heroAlt: "Model wearing editorial fashion in urban environment.",
-    mood: "Mineral petals, pale concrete, cool bloom",
-    tags: ["Campaign", "Lookbook", "Direction"],
+      "Arctica 3D builds a cinematic world through CGI silhouettes, experimental materials, and frozen atmospheres.",
+    heroImage: asset("arctica-3d", "cover.png"),
+    heroAlt: "Arctica 3D cover image.",
+    mood: "Cryo light, digital fur, reflective void",
+    tags: ["3D", "Digital Fashion", "Worldbuilding"],
     featured: true,
     gridClass: "md:col-span-5 md:row-span-2",
-    credits: [
-      { label: "Client", value: "Atelier Fracture" },
-      { label: "Photography", value: "Soren Vale" },
-      { label: "Styling", value: "Mina Roe" },
-      { label: "Production", value: "North Unit" },
-    ],
+    credits: [{ label: "Project", value: "Arctica 3D" }],
     blocks: [
       {
         type: "statement",
-        text: "Floral language stripped of sweetness and rebuilt as structure.",
-        note: "Season concept",
+        text: "Digital couture with museum-like framing and cold precision.",
+        note: "World concept",
         align: "center",
       },
       {
         type: "image",
-        image: image("photo-1483985988355-763728e1935b", 1800),
-        alt: "Full-body fashion image with modern styling.",
-        caption: "Campaign opener.",
+        image: asset("arctica-3d", "scene-1.png"),
+        alt: "Arctica 3D still DEsign 4 final.",
+        caption: "Hero scene.",
         aspect: "portrait",
       },
       {
         type: "image",
-        image: image("photo-1529139574466-a303027c1d8b", 1800),
-        alt: "Woman in refined editorial pose.",
-        caption: "Detail of silhouette and mood.",
+        image: asset("arctica-3d", "scene-2.png"),
+        alt: "Arctica 3D still Furr dress scene.",
+        caption: "Material and silhouette study.",
         aspect: "cinema",
       },
     ],
   },
   {
-    slug: "static-saint",
-    title: "Static Saint",
-    year: "2023",
-    season: "FW",
-    role: "Styling & Concept",
+    slug: "artica",
+    title: "Artica",
+    year: "2025",
+    season: "Collection",
+    role: "Creative Direction",
     category: "Editorial",
-    location: "Berlin",
+    location: "Studio",
     excerpt:
-      "A monochrome editorial exploring sanctity, distortion, and club-light minimalism through a couture lens.",
+      "A high-volume editorial narrative balancing stark composition with tactile fashion framing.",
     statement:
-      "The image should feel ceremonial, but never nostalgic.",
+      "Precision and repetition shape a coherent visual code.",
     description:
-      "Static Saint creates a coded visual language of devotion and disruption. High-contrast portraits sit beside void-like spaces and sharp material studies.",
-    heroImage: image("photo-1512436991641-6745cdb1723f"),
-    heroAlt: "High-fashion portrait with dark styling.",
-    mood: "Monochrome static, ritual black, cobalt ash",
-    tags: ["Editorial", "Styling", "Concept"],
+      "Artica explores editorial rhythm at scale, combining structured portrait logic with movement and surface detail.",
+    heroImage: asset("artica", "COVER003 2.JPEG"),
+    heroAlt: "Artica cover image.",
+    mood: "Sharp monochrome, polished edge, architectural posture",
+    tags: ["Editorial", "Campaign", "Direction"],
     featured: false,
     gridClass: "md:col-span-7 md:row-span-1",
-    credits: [
-      { label: "Publication", value: "Signal Review" },
-      { label: "Photography", value: "Noe Klein" },
-      { label: "Hair", value: "Vel Studio" },
-      { label: "Makeup", value: "Aster Lab" },
-    ],
+    credits: [{ label: "Project", value: "Artica" }],
     blocks: [
       {
         type: "image",
-        image: image("photo-1512436991641-6745cdb1723f", 1800),
-        alt: "Dark editorial portrait with tailored styling.",
-        caption: "Cover treatment.",
+        image: asset("artica", "001.JPEG"),
+        alt: "Artica still 01.",
+        caption: "Opening frame.",
         aspect: "cinema",
       },
       {
         type: "pair",
         images: [
           {
-            image: image("photo-1487412720507-e7ab37603c6f", 1200),
-            alt: "Portrait study in grayscale fashion mood.",
+            image: asset("artica", "P000.JPEG"),
+            alt: "Artica still P000.",
           },
           {
-            image: image("photo-1496747611176-843222e1e57c", 1200),
-            alt: "Model in evening look with dramatic lighting.",
+            image: asset("artica", "024.JPEG"),
+            alt: "Artica still 024.",
           },
         ],
-        caption: "Austere symmetry offset by subtle motion blur.",
+        caption: "Contrast and silhouette study.",
       },
       {
         type: "statement",
-        text: "Precision is more seductive than excess.",
-        note: "Styling principle",
+        text: "Discipline in framing creates impact without visual noise.",
+        note: "Editorial principle",
         align: "left",
       },
     ],
   },
   {
-    slug: "velvet-circuit",
-    title: "Velvet Circuit",
-    year: "2022",
-    season: "Capsule",
-    role: "Creative Lead",
-    category: "Brand World",
-    location: "London",
+    slug: "lookbook",
+    title: "Lookbook",
+    year: "2025",
+    season: "Selection",
+    role: "Styling & Curation",
+    category: "Lookbook",
+    location: "Studio",
     excerpt:
-      "A capsule identity built around tactile darkness, polished metal, and a nightlife-adjacent visual language.",
+      "A curated sequence of looks focused on silhouette, texture, and movement.",
     statement:
-      "An atmosphere designed to feel expensive before a logo is even seen.",
+      "Each frame is selected for cohesion, pace, and visual clarity.",
     description:
-      "Velvet Circuit extends beyond campaign imagery into tone, pacing, and branded environments. The work bridges fashion launch materials with art-direction-led digital presence.",
-    heroImage: image("photo-1515886657613-9f3515b0c78f"),
-    heroAlt: "Stylish portrait with modern fashion pose.",
-    mood: "Velvet black, electric silver, late-night gloss",
-    tags: ["Brand World", "Launch", "Campaign"],
+      "The Lookbook distills key images into a clean editorial run designed for quick overview and campaign context.",
+    heroImage: asset("lookbook", "COVERShin Jeong Hoon, @sh1nfoto (16).JPEG"),
+    heroAlt: "Lookbook cover image.",
+    mood: "Editorial sequence, precision styling, visual rhythm",
+    tags: ["Lookbook", "Styling", "Selection"],
     featured: false,
     gridClass: "md:col-span-4 md:row-span-1",
-    credits: [
-      { label: "Client", value: "Circuit House" },
-      { label: "Photography", value: "Vera Nox" },
-      { label: "Motion", value: "Frame / Unit" },
-      { label: "Digital", value: "Studio 3liksir" },
-    ],
+    credits: [{ label: "Project", value: "Lookbook" }],
     blocks: [
       {
         type: "statement",
-        text: "The launch environment was conceived like a sequence of stills suspended in motion.",
-        note: "Launch framing",
+        text: "A compact visual archive with a clean, cinematic reading flow.",
+        note: "Selection logic",
         align: "center",
       },
       {
         type: "image",
-        image: image("photo-1515886657613-9f3515b0c78f", 1800),
-        alt: "Cinematic fashion portrait.",
-        caption: "Primary launch key visual.",
+        image: asset("lookbook", "Shin Jeong Hoon, @sh1nfoto (1).JPEG"),
+        alt: "Lookbook still 1.",
+        caption: "Opening look.",
         aspect: "portrait",
       },
       {
         type: "image",
-        image: image("photo-1500917293891-ef795e70e1f6", 1800),
-        alt: "Cool toned editorial close-up.",
-        caption: "Digital identity crop study.",
+        image: asset("lookbook", "Shin Jeong Hoon, @sh1nfoto (12).JPEG"),
+        alt: "Lookbook still 12.",
+        caption: "Detail frame.",
         aspect: "square",
-      },
-    ],
-  },
-  {
-    slug: "future-relic",
-    title: "Future Relic",
-    year: "2021",
-    season: "Pre-Collection",
-    role: "Concept Development",
-    category: "Exhibition",
-    location: "Antwerp",
-    excerpt:
-      "An exhibition-minded presentation where garments are treated as artefacts from a colder future.",
-    statement:
-      "The styling language treats history as a material, not a reference board.",
-    description:
-      "Future Relic blends installation logic with editorial sequencing. Objects, garments, and bodies are arranged as though excavated from a speculative archive.",
-    heroImage: image("photo-1529139574466-a303027c1d8b"),
-    heroAlt: "Minimal fashion portrait with cool background.",
-    mood: "Archive silver, museum air, speculative tailoring",
-    tags: ["Exhibition", "Installation", "Concept"],
-    featured: false,
-    gridClass: "md:col-span-8 md:row-span-1",
-    credits: [
-      { label: "Institution", value: "North Gallery" },
-      { label: "Photography", value: "Rhea Cole" },
-      { label: "Set Design", value: "Archive Forms" },
-      { label: "Producer", value: "M. Delaire" },
-    ],
-    blocks: [
-      {
-        type: "image",
-        image: image("photo-1529139574466-a303027c1d8b", 1800),
-        alt: "Portrait with austere fashion styling.",
-        caption: "Exhibition campaign image.",
-        aspect: "cinema",
-      },
-      {
-        type: "pair",
-        images: [
-          {
-            image: image("photo-1500917293891-ef795e70e1f6", 1200),
-            alt: "Pale fashion portrait.",
-          },
-          {
-            image: image("photo-1483985988355-763728e1935b", 1200),
-            alt: "Fashion movement study.",
-          },
-        ],
-        caption: "Installation views translated into editorial rhythm.",
-      },
-      {
-        type: "statement",
-        text: "A future archive should feel tactile, not digital.",
-        note: "Exhibition text",
-        align: "left",
       },
     ],
   },
 ];
 
-export const featuredProjects = projects.filter((project) => project.featured);
+const visibleProjects = projects.filter(
+  (project) => !project.slug.toUpperCase().startsWith("IGNORE"),
+);
+
+export const featuredProjects = visibleProjects.filter(
+  (project) => project.featured,
+);
 
 export function getProjectBySlug(slug: string) {
-  return projects.find((project) => project.slug === slug);
+  return visibleProjects.find((project) => project.slug === slug);
 }
 
 export function getRelatedProjects(slug: string, limit = 2) {
-  return projects.filter((project) => project.slug !== slug).slice(0, limit);
+  return visibleProjects
+    .filter((project) => project.slug !== slug)
+    .slice(0, limit);
 }

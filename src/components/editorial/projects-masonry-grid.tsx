@@ -24,13 +24,13 @@ export function ProjectsMasonryGrid({ projects }: ProjectsMasonryGridProps) {
         </p>
       </Reveal>
 
-      <div className="grid gap-6 md:grid-cols-12 md:auto-rows-[15rem] md:gap-6">
+      <div className="grid gap-6 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
         {projects.map((project, index) => (
           <ProjectCardEditorial
             key={project.slug}
             project={project}
-            priority={index < 2}
-            className={project.gridClass}
+            priority={index === 0}
+            className="h-full"
           />
         ))}
       </div>

@@ -107,7 +107,7 @@ export const homeContent: HomeContent = {
       "Creative direction & image",
       "Brand-aligned collaborations",
     ],
-    email: "studio@3liksir.com",
+    email: "3liksirdesigns@gmail.com",
     instagramLabel: "@3liksir",
     instagramHref: siteConfig.instagramUrl,
   },

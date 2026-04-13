@@ -84,7 +84,7 @@ export function HeroEditorial({ project }: HeroEditorialProps) {
               alt={project.heroAlt}
               fill
               priority
-              sizes="(min-width: 1024px) 44vw, 100vw"
+              sizes="(min-width: 1720px) 1720px, 100vw"
               className="object-cover object-[center_18%] opacity-[0.82] saturate-[0.92]"
             />
 

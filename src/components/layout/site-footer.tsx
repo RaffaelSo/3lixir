@@ -19,10 +19,10 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-3 md:items-end">
           <Link
-            href="mailto:studio@3liksir.com"
+            href="mailto:3liksirdesigns@gmail.com"
             className="font-[family-name:var(--font-mono)] text-[0.62rem] font-medium uppercase tracking-[0.24em] text-white/52 transition-colors duration-500 hover:text-[var(--accent)]"
           >
-            studio@3liksir.com
+            3liksirdesigns@gmail.com
           </Link>
           <Link
             href={siteConfig.instagramUrl}

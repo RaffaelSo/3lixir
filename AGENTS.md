@@ -69,6 +69,17 @@ If content changes are requested, they should usually happen in `src/data/projec
 - The contact form in `src/components/editorial/contact-form-shell.tsx` is currently presentational only
 - No automated test setup is currently configured in `package.json`
 
+## Image Performance
+
+Full write-up: **`docs/image-performance.md`**.
+
+**Rules of thumb:**
+
+- Match **`sizes`** to real rendered width; never use bare **`100vw`** alone for images inside layouts capped at **~1720px** — use a cap such as **`(min-width: 1720px) 1720px, 100vw`** for full-width heroes within that shell.
+- Use **`priority`** sparingly (typically one LCP candidate per route).
+- New large project files: run the **Phase 2** optimizer and ensure **`/images/projects-optimized/`** + manifest stay aligned; see **`src/lib/optimized-project-image.ts`** and **`npm run images:manifest`**.
+- **Maintenance:** when layout max-width or breakpoints change, update **`sizes`**; when new assets are added, rerun the **optimization pipeline** (see **`docs/image-performance.md`**).
+
 ## Guidance For Cursor Agents
 
 - Treat this project as a **frontend-first brand website**, not as a product dashboard or SaaS app

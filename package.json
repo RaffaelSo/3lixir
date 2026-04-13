@@ -7,6 +7,12 @@
   },
   "scripts": {
     "dev": "next dev",
+    "images:manifest": "node scripts/generate-project-images-manifest.mjs",
+    "images:optimize": "node scripts/optimize-project-images-phase2.mjs --dry-run",
+    "images:optimize:dry": "node scripts/optimize-project-images-phase2.mjs --dry-run",
+    "images:optimize:write": "node scripts/optimize-project-images-phase2.mjs --write",
+    "images:optimize:replace": "node scripts/optimize-project-images-phase2.mjs --write --replace",
+    "prebuild": "npm run images:manifest",
     "build": "next build",
     "start": "next start",
     "lint": "eslint ."
@@ -27,6 +33,7 @@
     "@types/react-dom": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
+    "sharp": "^0.34.5",
     "tailwindcss": "latest",
     "typescript": "latest"
   }

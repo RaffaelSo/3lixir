@@ -9,5 +9,11 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
-  return <ProjectsMasonryGrid projects={projects} />;
+  const sortedProjects = [...projects].sort((a, b) => {
+    if (a.slug === "lookbook") return -1;
+    if (b.slug === "lookbook") return 1;
+    return 0;
+  });
+
+  return <ProjectsMasonryGrid projects={sortedProjects} />;
 }

@@ -27,7 +27,7 @@ export function ProjectCardEditorial({
           alt={project.heroAlt}
           fill
           priority={priority}
-          sizes="(min-width: 768px) 50vw, 100vw"
+          sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
           className="relative z-0 object-cover object-[center_20%] transition duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.035] group-hover:saturate-100"
         />
 
