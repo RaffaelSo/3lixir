@@ -14,7 +14,7 @@ export function HomeFeaturedWork({ projects }: HomeFeaturedWorkProps) {
   return (
     <SectionShell
       as="section"
-      className="py-28 sm:py-36 lg:py-44"
+      className="py-20 sm:py-28 lg:py-32"
       aria-labelledby="featured-heading"
     >
       <HomeSectionHeading
@@ -25,7 +25,7 @@ export function HomeFeaturedWork({ projects }: HomeFeaturedWorkProps) {
         align="split"
       />
 
-      <div className="space-y-20 sm:space-y-28 lg:space-y-36">
+      <div className="space-y-14 sm:space-y-20 lg:space-y-28">
         {projects.map((project, index) => (
           <Reveal key={project.slug} delay={index * 0.05}>
             <FeaturedProjectCard project={project} index={index} />

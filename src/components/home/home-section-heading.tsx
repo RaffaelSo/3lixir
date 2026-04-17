@@ -26,8 +26,9 @@ export function HomeSectionHeading({
   return (
     <div
       className={cn(
-        "mb-16 grid gap-10 sm:mb-20 lg:mb-24",
-        align === "split" && "lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] lg:items-end lg:gap-20",
+        "mb-12 grid gap-8 sm:mb-14 sm:gap-9 lg:mb-16 lg:gap-10",
+        align === "split" &&
+          "lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] lg:items-end lg:gap-16",
         className,
       )}
     >
@@ -35,7 +36,7 @@ export function HomeSectionHeading({
         <Eyebrow>{eyebrow}</Eyebrow>
         <h2
           id={id}
-          className="font-display-editorial mt-6 max-w-[22ch] text-[clamp(2rem,5vw,3.75rem)] leading-[0.98] tracking-[-0.04em] text-[var(--foreground)]"
+          className="font-display-editorial mt-5 max-w-[22ch] text-[clamp(2rem,5vw,3.75rem)] leading-[0.98] tracking-[-0.04em] text-[var(--foreground)]"
         >
           {title}
         </h2>

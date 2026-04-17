@@ -12,23 +12,23 @@ export function HomeManifesto({ content }: HomeManifestoProps) {
   return (
     <SectionShell
       as="section"
-      className="py-28 sm:py-36 lg:py-44"
+      className="py-16 sm:py-20 lg:py-24"
       aria-labelledby="manifesto-heading"
     >
-      <div className="grid gap-16 lg:grid-cols-[0.35fr_1fr] lg:gap-24 xl:gap-32">
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16 xl:gap-20">
         <Reveal>
           <Eyebrow>{content.eyebrow}</Eyebrow>
           <p
             id="manifesto-heading"
-            className="font-display-editorial mt-8 text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.12] tracking-[-0.035em] text-[var(--foreground)]"
+            className="font-display-editorial mt-5 text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.12] tracking-[-0.035em] text-[var(--foreground)]"
           >
             {content.statement}
           </p>
         </Reveal>
-        <div className="space-y-10 lg:pt-2">
+        <div className="space-y-7 lg:space-y-8">
           {content.paragraphs.map((p, i) => (
             <Reveal key={i} delay={i * 0.06}>
-              <p className="max-w-2xl text-[0.9375rem] leading-[1.85] tracking-[0.02em] text-white/46">
+              <p className="max-w-xl text-[0.9375rem] leading-[1.8] tracking-[0.02em] text-white/46">
                 {p}
               </p>
             </Reveal>
