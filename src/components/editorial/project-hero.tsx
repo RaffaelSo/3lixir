@@ -38,7 +38,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
               alt={project.heroAlt}
               fill
               priority
-              sizes="(min-width: 1720px) 1720px, 100vw"
+              sizes="(min-width: 1720px) 1720px, (min-width: 1280px) calc(100vw - 10rem), (min-width: 1024px) calc(100vw - 8rem), (min-width: 640px) calc(100vw - 5rem), calc(100vw - 3rem)"
               className="object-cover object-[center_22%] saturate-[0.9]"
             />
           </div>

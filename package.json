@@ -8,11 +8,12 @@
   "scripts": {
     "dev": "next dev",
     "images:manifest": "node scripts/generate-project-images-manifest.mjs",
+    "images:prepare": "npm run images:optimize:write && npm run images:manifest",
     "images:optimize": "node scripts/optimize-project-images-phase2.mjs --dry-run",
     "images:optimize:dry": "node scripts/optimize-project-images-phase2.mjs --dry-run",
     "images:optimize:write": "node scripts/optimize-project-images-phase2.mjs --write",
     "images:optimize:replace": "node scripts/optimize-project-images-phase2.mjs --write --replace",
-    "prebuild": "npm run images:manifest",
+    "prebuild": "npm run images:prepare",
     "build": "next build",
     "start": "next start",
     "lint": "eslint ."
@@ -23,7 +24,8 @@
     "framer-motion": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "workflow": "^4.2.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "latest",

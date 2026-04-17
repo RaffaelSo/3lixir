@@ -17,11 +17,12 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
     <article>
       <Link
         href={`/projects/${project.slug}`}
-        className="group grid gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-0"
+        className="group grid min-h-0 gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-0"
       >
         <div
           className={cn(
-            "relative aspect-[4/5] min-h-[min(70svh,36rem)] overflow-hidden lg:aspect-auto lg:min-h-[min(85svh,44rem)]",
+            "relative isolate min-h-[18rem] w-full overflow-hidden sm:min-h-[22rem]",
+            "lg:min-h-[28rem] lg:h-full",
             flip && "lg:order-2",
           )}
         >
@@ -30,7 +31,7 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
               src={project.heroImage}
               alt={project.heroAlt}
               fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
+              sizes="(min-width: 1720px) 860px, (min-width: 1024px) 50vw, 100vw"
               className="object-cover object-[center_25%] transition duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.02]"
             />
           </div>
@@ -38,7 +39,7 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
 
         <div
           className={cn(
-            "flex flex-col justify-between gap-12 border border-white/[0.06] bg-[rgba(6,8,12,0.35)] px-8 py-12 sm:px-12 sm:py-16 lg:min-h-[min(85svh,44rem)]",
+            "flex min-h-0 flex-col justify-between gap-12 border border-white/[0.06] bg-[rgba(6,8,12,0.35)] px-8 py-12 sm:px-12 sm:py-16 lg:min-h-[28rem]",
             flip && "lg:order-1",
           )}
         >
