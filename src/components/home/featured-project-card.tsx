@@ -26,8 +26,10 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
       >
         <div
           className={cn(
-            "relative isolate aspect-[3/4] w-full min-h-[min(68svh,26rem)] overflow-hidden sm:aspect-[4/5] sm:min-h-[min(72svh,30rem)]",
-            "lg:aspect-auto lg:min-h-[min(78svh,44rem)] lg:h-full",
+            // Explicit box sizing only — avoid lg:h-full + aspect-auto (grid min-h-0 can collapse fill parents).
+            "relative isolate w-full overflow-hidden bg-[#06080c]",
+            "aspect-[4/5] min-h-[18rem] sm:min-h-[20rem]",
+            "lg:aspect-[3/4] lg:min-h-[min(72svh,42rem)] lg:w-full",
             flip && "lg:order-2",
           )}
         >
@@ -37,7 +39,7 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
               alt={project.heroAlt}
               fill
               sizes="(min-width: 1720px) 920px, (min-width: 1024px) 62vw, 100vw"
-              className="object-cover object-[center_22%] transition duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.018]"
+              className="z-0 object-cover object-[center_22%] transition duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.018]"
             />
           </div>
         </div>
