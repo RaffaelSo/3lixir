@@ -40,7 +40,7 @@ export function ProjectFolderGallery({
               src={src}
               alt={`${slug} image ${index + 1}`}
               fill
-              sizes="(min-width: 768px) 45vw, 100vw"
+              sizes="(min-width: 1720px) 740px, (min-width: 768px) 46vw, 100vw"
               className="object-cover object-center"
             />
           </figure>

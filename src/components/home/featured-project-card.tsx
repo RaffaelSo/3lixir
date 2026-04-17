@@ -31,7 +31,7 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
               src={project.heroImage}
               alt={project.heroAlt}
               fill
-              sizes="(min-width: 1720px) 860px, (min-width: 1024px) 50vw, 100vw"
+              sizes="(min-width: 1720px) 780px, (min-width: 1024px) 50vw, 100vw"
               className="object-cover object-[center_25%] transition duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.02]"
             />
           </div>

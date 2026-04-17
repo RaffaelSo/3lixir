@@ -16,7 +16,7 @@ export function PortraitPanel() {
               src={portraitImage}
               alt="Portrait placeholder for fashion creative direction."
               fill
-              sizes="(min-width: 1024px) 52vw, 100vw"
+              sizes="(min-width: 1720px) 828px, (min-width: 1024px) 50vw, 100vw"
               className="object-cover object-[center_22%] saturate-[0.9]"
             />
           </div>

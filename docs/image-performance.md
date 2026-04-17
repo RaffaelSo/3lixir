@@ -23,20 +23,44 @@ Mismatch between declared and real layout width leads to overfetch.
 ## Root Cause
 
 - `sizes` too optimistic → browser selected up to `3840w` (Next.js default `deviceSizes` include very large widths)
-- images rendered ~1720px wide (see `SectionShell` `max-w-[1720px]`) → unnecessary transfer
+- images rendered near the **content column width** inside `SectionShell` (max `1720px` **including** horizontal padding) → unnecessary transfer if `sizes` assumed the full 1720px for the bitmap
 - large source files amplified worst-case payload
 
 ---
 
-## Highest Impact Fix
+## Two hero patterns (do not confuse them)
 
-Hero and other full-width images inside the bounded layout should cap the described width at the same order of magnitude as the content shell:
+### 1. True viewport full-bleed (e.g. `home-hero`)
+
+The image covers the **entire viewport** (`absolute inset-0` on a full-width header, not limited by `SectionShell` width). The rendered width is effectively **100vw**.
 
 ```tsx
-sizes="(min-width: 1720px) 1720px, 100vw"
+sizes="100vw"
 ```
 
-Smaller viewports keep `100vw` where the hero is truly full-bleed. Adjust the breakpoint if the layout max width changes.
+Using a synthetic cap like `(min-width: 1720px) 1720px` here would **mis-describe** display width on ultrawide viewports (the image still draws at `100vw`).
+
+### 2. Shell-bounded full-width (e.g. `project-hero`, full-bleed figures inside `SectionShell`)
+
+The image spans the **inner content column** only. With `SectionShell` at `max-w-[1720px]` and horizontal padding (`xl:px-20` etc.), the **maximum content width** is about **1560px** at very large viewports—not 1720px.
+
+```tsx
+sizes="(min-width: 1720px) 1560px, 100vw"
+```
+
+Refine middle breakpoints with `calc(100vw - …)` where the layout uses different padding per breakpoint (see `project-hero`).
+
+---
+
+## Highest Impact Fix (bounded layouts)
+
+For full-width images **inside** the padded shell, cap `sizes` at the **inner column width** (~1560px at max), not the shell’s outer `max-w-[1720px]`:
+
+```tsx
+sizes="(min-width: 1720px) 1560px, 100vw"
+```
+
+Smaller viewports use `100vw` or `calc(100vw - padding)` as appropriate. Adjust numbers if `SectionShell` padding or max width changes.
 
 ---
 
@@ -46,13 +70,14 @@ Implemented in UI components (no asset changes):
 
 | Area | Change |
 |------|--------|
-| Bounded layouts | `sizes` aligned with ~1720px max content width where appropriate |
-| Project grid (`/projects`) | `xl` three-column layout: ~`33vw` instead of overstating as `50vw` |
-| `priority` | Single likely LCP image per route (e.g. first card on `/projects`) |
-| `ProjectFolderGallery` | Reduced initial batch size (lower parallel image concurrency) |
-| Heroes | `home-hero`, `project-hero`, and `hero-editorial` use the bounded hero `sizes` pattern |
+| Bounded layouts | `sizes` aligned with **~1560px** inner max where the image fills the shell column |
+| Grids / pairs / cards | Column caps at large breakpoints (e.g. half-column ~780px, third-column ~504px), not generic overstated `vw` |
+| Project grid (`/projects`) | `xl` three-column layout: `sizes` reflect **~504px** column at max |
+| `priority` | At most one likely LCP image per route where justified (e.g. first card on `/projects`) |
+| `ProjectFolderGallery` | Pair grid `sizes` aligned with two-column width + max cap |
+| Heroes | **Viewport full-bleed** (`home-hero`): `100vw`. **Shell full-width** (`project-hero`): **~1560px** cap + `calc`. **Split-column** (`hero-editorial`, `home-world-cyber`): **~704px** / `44vw` at large breakpoints (half of inner grid, not full shell) |
 
-**Why it matters:** `next/image` passes `sizes` to the browser’s `srcset` selection. Correct `sizes` reduces chosen width and avoids requesting multi‑megabyte derivatives for on-screen pixels.
+**Why it matters:** `next/image` passes `sizes` to the browser’s `srcset` selection. Correct `sizes` reduces chosen width and avoids requesting oversized derivatives for on-screen pixels.
 
 ---
 
@@ -68,9 +93,11 @@ Implemented in UI components (no asset changes):
 
 ## Definition of Done
 
-- No **sole** unbounded `100vw` for images in **capped** layouts; heroes use a **1720px** cap where the shell caps content.
+- No **sole** unbounded `100vw` for images in **capped** layouts where the bitmap is narrower than the viewport.
+- **Shell-bound** “full width” images: **`sizes` caps match inner column width** (~1560px at max for current padding), not a blanket **1720px** unless the image truly renders that wide.
+- **Viewport full-bleed** heroes: **`sizes="100vw"`** (or equivalent) so srcset matches real draw width.
 - **At most one** `priority` image per route where LCP is image-driven (unless explicitly justified).
-- DevTools: image requests should not show absurd **`w=`** values (e.g. **3840**) for content drawn ~1720px wide.
+- DevTools: image requests should not show absurd **`w=`** values for content drawn at modest widths.
 - Production references consistently target **optimized** assets under **`/images/projects-optimized/`** where the pipeline has been run.
 
 ---

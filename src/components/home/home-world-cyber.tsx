@@ -45,7 +45,7 @@ export function HomeWorldCyber({ content }: HomeWorldCyberProps) {
                 src={content.image.src}
                 alt={content.image.alt}
                 fill
-                sizes="(min-width: 1720px) 820px, (min-width: 1024px) 45vw, 100vw"
+                sizes="(min-width: 1720px) 704px, (min-width: 1024px) 44vw, 100vw"
                 className="object-cover object-[center_15%] saturate-[0.9]"
               />
             </div>

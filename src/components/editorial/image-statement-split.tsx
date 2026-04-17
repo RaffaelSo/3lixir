@@ -23,7 +23,7 @@ export function ImageStatementSplit({
               src={project.heroImage}
               alt={project.heroAlt}
               fill
-              sizes="(min-width: 1024px) 40vw, 100vw"
+              sizes="(min-width: 1720px) 660px, (min-width: 1024px) 42vw, 100vw"
               className="object-cover object-[center_22%] opacity-75 saturate-[0.9]"
             />
           </div>

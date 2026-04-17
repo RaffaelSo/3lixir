@@ -45,7 +45,7 @@ export function FeaturedProjectsRail({
                     src={project.heroImage}
                     alt={project.heroAlt}
                     fill
-                    sizes="(min-width: 1024px) 38vw, 100vw"
+                    sizes="(min-width: 1720px) 716px, (min-width: 1024px) 47vw, 100vw"
                     className="object-cover object-[center_20%] transition duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03] group-hover:saturate-100"
                   />
                 </div>

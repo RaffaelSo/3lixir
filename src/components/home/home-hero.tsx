@@ -21,7 +21,7 @@ export function HomeHero() {
           alt="Lookbook cover image."
           fill
           priority
-          sizes="(min-width: 1720px) 1720px, 100vw"
+          sizes="100vw"
           className="object-cover object-[center_22%] saturate-[0.88]"
         />
         <div
