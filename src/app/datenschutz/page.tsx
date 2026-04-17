@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { SectionShell } from "@/components/layout/section-shell";
-import { getSiteUrl } from "@/lib/seo-config";
+import { getPublicSiteUrl } from "@/lib/seo-config";
 
 export const metadata: Metadata = {
   title: "Datenschutz",
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function DatenschutzPage() {
-  const siteUrl = getSiteUrl();
+  const siteUrl = getPublicSiteUrl();
 
   return (
     <SectionShell
@@ -110,6 +110,16 @@ export default function DatenschutzPage() {
 
         <p className="font-[family-name:var(--font-mono)] text-[0.58rem] uppercase tracking-[0.24em] text-white/28">
           Stand: April 2026 · Website: {siteUrl}
+        </p>
+
+        <p className="font-[family-name:var(--font-mono)] text-[0.58rem] uppercase tracking-[0.24em] text-white/28">
+          Englische Fassung:{" "}
+          <Link
+            href="/privacy"
+            className="text-white/40 underline decoration-white/12 underline-offset-[0.2em] transition duration-500 hover:text-[var(--accent)]"
+          >
+            Privacy
+          </Link>
         </p>
       </div>
       </article>

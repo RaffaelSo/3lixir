@@ -1,19 +1,20 @@
 "use client";
 
-import { useState } from "react";
-
 import { cn } from "@/lib/utils";
 
-import { defaultLocale, plannedLocales } from "@/lib/i18n-config";
+import { useSiteLocale } from "@/contexts/site-locale-context";
+import { siteLocales, type UISiteLocale } from "@/lib/i18n-config";
 
-const options = [defaultLocale, ...plannedLocales] as const;
-
-type LocaleCode = (typeof options)[number];
-
-const labels: Record<LocaleCode, string> = {
+const labels: Record<UISiteLocale, string> = {
   en: "EN",
   de: "DE",
   ru: "RU",
+};
+
+const ariaLabels: Record<UISiteLocale, string> = {
+  en: "Language",
+  de: "Sprache",
+  ru: "Language",
 };
 
 type LocaleSwitchMockProps = {
@@ -23,20 +24,20 @@ type LocaleSwitchMockProps = {
 };
 
 /**
- * Visual-only language control for UI review. Highlights are local state;
- * the site does not switch locale or content yet.
+ * Switches UI language for shared chrome (footer legal links, `html lang`).
+ * Page copy remains English-first; German legal pages stay available under /impressum and /datenschutz.
  */
 export function LocaleSwitchMock({
   variant = "compact",
   className,
 }: LocaleSwitchMockProps) {
-  const [active, setActive] = useState<LocaleCode>(defaultLocale);
+  const { locale: active, setLocale } = useSiteLocale();
 
   return (
     <div
       className={cn("flex flex-col gap-2", className)}
       role="radiogroup"
-      aria-label="Language (UI preview — English content only)"
+      aria-label={ariaLabels[active]}
     >
       <div
         className={cn(
@@ -44,7 +45,7 @@ export function LocaleSwitchMock({
           variant === "full" && "self-start",
         )}
       >
-        {options.map((code) => {
+        {siteLocales.map((code) => {
           const isOn = active === code;
           return (
             <button
@@ -52,7 +53,7 @@ export function LocaleSwitchMock({
               type="button"
               role="radio"
               aria-checked={isOn}
-              onClick={() => setActive(code)}
+              onClick={() => setLocale(code)}
               className={cn(
                 "min-w-[2.25rem] px-2 py-1.5 font-[family-name:var(--font-mono)] text-[0.58rem] font-medium uppercase tracking-[0.22em] transition-[color,background] duration-300",
                 isOn
@@ -67,7 +68,9 @@ export function LocaleSwitchMock({
       </div>
       {variant === "full" ? (
         <p className="font-[family-name:var(--font-mono)] text-[0.52rem] uppercase tracking-[0.2em] text-white/28">
-          Preview only — translations not connected
+          {active === "de"
+            ? "Rechtstexte: DE unter Impressum / Datenschutz"
+            : "Legal (EN): Imprint / Privacy — DE versions linked on those pages"}
         </p>
       ) : null}
     </div>

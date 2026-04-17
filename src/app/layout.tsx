@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 
 import "./globals.css";
 
+import { AppShellProviders } from "@/components/layout/app-shell-providers";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { PageTransition } from "@/components/motion/page-transition";
@@ -47,12 +48,16 @@ export default function RootLayout({
             <div className="absolute inset-x-0 top-0 h-[min(70vh,36rem)] bg-[radial-gradient(ellipse_70%_55%_at_50%_-15%,rgba(255,255,255,0.035),transparent_62%)]" />
           </div>
 
-          <SiteHeader />
+          <AppShellProviders>
+            <SiteHeader />
 
-          <PageTransition>
-            <main className="relative z-10 pt-[4.75rem] sm:pt-[5.25rem]">{children}</main>
-            <SiteFooter />
-          </PageTransition>
+            <PageTransition>
+              <main className="relative z-10 pt-[4.75rem] sm:pt-[5.25rem]">
+                {children}
+              </main>
+              <SiteFooter />
+            </PageTransition>
+          </AppShellProviders>
         </div>
         <Analytics />
         <SpeedInsights />

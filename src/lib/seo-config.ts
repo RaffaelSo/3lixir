@@ -13,6 +13,17 @@ export function getSiteUrl(): string {
   return "https://www.3liksir.com";
 }
 
+/**
+ * Canonical public URL for legal text and any copy that must not expose
+ * Vercel preview hostnames (VERCEL_URL). Uses NEXT_PUBLIC_SITE_URL when set,
+ * otherwise the production domain for this site.
+ */
+export function getPublicSiteUrl(): string {
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (fromEnv) return trimTrailingSlash(fromEnv);
+  return "https://3liksir.site";
+}
+
 export const siteConfig = {
   brandShort: "3liksir",
   /** Default `<title>` for the homepage (child routes use template). */

@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { FooterLegalLinks } from "@/components/layout/footer-legal-links";
 import { SectionShell } from "@/components/layout/section-shell";
 import { siteConfig } from "@/lib/seo-config";
 
@@ -31,20 +32,7 @@ export function SiteFooter() {
           >
             @3liksir
           </Link>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-[family-name:var(--font-mono)] text-[0.62rem] font-medium uppercase tracking-[0.24em]">
-            <Link
-              href="/impressum"
-              className="text-white/52 transition-colors duration-500 hover:text-[var(--accent)]"
-            >
-              Impressum
-            </Link>
-            <Link
-              href="/datenschutz"
-              className="text-white/52 transition-colors duration-500 hover:text-[var(--accent)]"
-            >
-              Datenschutz
-            </Link>
-          </div>
+          <FooterLegalLinks />
           <p className="font-[family-name:var(--font-mono)] text-[0.58rem] uppercase tracking-[0.3em] text-white/22">
             Berlin / Worldwide
           </p>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { SectionShell } from "@/components/layout/section-shell";
 
@@ -74,6 +75,16 @@ export default function ImpressumPage() {
             angegeben ist.
           </p>
         </section>
+
+        <p className="font-[family-name:var(--font-mono)] text-[0.58rem] uppercase tracking-[0.24em] text-white/28">
+          Englische Fassung:{" "}
+          <Link
+            href="/imprint"
+            className="text-white/40 underline decoration-white/12 underline-offset-[0.2em] transition duration-500 hover:text-[var(--accent)]"
+          >
+            Imprint
+          </Link>
+        </p>
       </div>
       </article>
     </SectionShell>
