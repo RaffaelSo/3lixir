@@ -55,11 +55,11 @@ export function HomeHero() {
           className="object-cover object-[center_22%] saturate-[0.88]"
         />
         <div
-          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,3,6,0.5)_0%,rgba(4,5,10,0.72)_45%,rgba(3,4,8,0.94)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,3,6,0.32)_0%,rgba(4,5,10,0.5)_45%,rgba(3,4,8,0.78)_100%)]"
           aria-hidden
         />
         <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_100%,rgba(0,0,0,0.55),transparent_55%)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_100%,rgba(0,0,0,0.32),transparent_62%)]"
           aria-hidden
         />
       </div>
