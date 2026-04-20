@@ -130,8 +130,8 @@ img {
   z-index: 2;
   pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(4, 5, 10, 0.22) 0%, transparent 42%, transparent 58%, rgba(3, 5, 12, 0.62) 100%),
-    linear-gradient(90deg, rgba(158, 182, 217, 0.05) 0%, transparent 24%, transparent 76%, rgba(4, 6, 12, 0.18) 100%);
+    linear-gradient(180deg, rgba(4, 5, 10, 0.12) 0%, transparent 35%, transparent 70%, rgba(3, 5, 12, 0.34) 100%),
+    linear-gradient(90deg, rgba(158, 182, 217, 0.04) 0%, transparent 30%, transparent 70%, rgba(4, 6, 12, 0.1) 100%);
   mix-blend-mode: normal;
 }
 
@@ -142,6 +142,15 @@ img {
   z-index: 2;
   pointer-events: none;
   background: radial-gradient(ellipse 75% 65% at 50% 45%, transparent 20%, rgba(2, 4, 10, 0.55) 100%);
+}
+
+.image-vignette-soft::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(ellipse 90% 85% at 50% 45%, transparent 45%, rgba(2, 4, 10, 0.28) 100%);
 }
 
 /* Text links: editorial underline, not startup buttons */

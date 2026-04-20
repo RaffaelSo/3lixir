@@ -42,13 +42,15 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
             flip && "lg:order-2",
           )}
         >
-          <div className="editorial-crop image-vignette-cold absolute inset-0">
+          <div className="editorial-crop image-vignette-soft absolute inset-0">
             <Image
               src={project.heroImage}
               alt={project.heroAlt}
               fill
+              priority={index === 0}
+              loading={index === 0 ? "eager" : "lazy"}
               sizes="(min-width: 1720px) 920px, (min-width: 1024px) 62vw, 100vw"
-              className="z-0 object-cover object-[center_22%] transition duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.018]"
+              className="z-0 object-cover object-[center_30%] transition duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.018]"
             />
           </div>
         </div>
