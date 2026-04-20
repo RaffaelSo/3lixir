@@ -20,7 +20,7 @@ export function Reveal({
 }: RevealProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y, filter: "blur(4px)" }}
+      initial={{ opacity: 1, y: Math.min(y, 10), filter: "blur(2px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, amount: 0.15, margin: "0px 0px -8% 0px" }}
       transition={{

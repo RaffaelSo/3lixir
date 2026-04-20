@@ -1,10 +1,34 @@
+"use client";
+
 import Link from "next/link";
 
 import { FooterLegalLinks } from "@/components/layout/footer-legal-links";
 import { SectionShell } from "@/components/layout/section-shell";
+import { useSiteLocale } from "@/contexts/site-locale-context";
 import { siteConfig } from "@/lib/seo-config";
 
+const copy = {
+  en: {
+    description:
+      "Berlin — couture fashion, experimental design, and image-led brand work.",
+    reach: "Berlin / Worldwide",
+  },
+  de: {
+    description:
+      "Berlin — Couture Fashion, experimentelles Design und bildgeführte Markenarbeit.",
+    reach: "Berlin / Weltweit",
+  },
+  ru: {
+    description:
+      "Берлин — кутюрная мода, экспериментальный дизайн и визуально выстроенная работа с брендом.",
+    reach: "Берлин / Worldwide",
+  },
+} as const;
+
 export function SiteFooter() {
+  const { locale } = useSiteLocale();
+  const text = copy[locale];
+
   return (
     <footer className="border-t border-white/[0.06] py-14 sm:py-16">
       <SectionShell className="flex flex-col gap-12 text-sm text-white/40 md:flex-row md:items-end md:justify-between">
@@ -13,8 +37,7 @@ export function SiteFooter() {
             3liksir
           </p>
           <p className="text-[0.9375rem] leading-[1.75] tracking-[0.02em] text-white/48">
-            Berlin — couture fashion, experimental design, and image-led brand
-            work.
+            {text.description}
           </p>
         </div>
 
@@ -34,7 +57,7 @@ export function SiteFooter() {
           </Link>
           <FooterLegalLinks />
           <p className="font-[family-name:var(--font-mono)] text-[0.58rem] uppercase tracking-[0.3em] text-white/22">
-            Berlin / Worldwide
+            {text.reach}
           </p>
         </div>
       </SectionShell>

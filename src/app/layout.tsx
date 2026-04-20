@@ -32,11 +32,22 @@ const mono = IBM_Plex_Mono({
 
 export const metadata = rootMetadata;
 
+function isVercelAnalyticsEnabled(): boolean {
+  return process.env.NEXT_PUBLIC_ENABLE_VERCEL_ANALYTICS?.trim().toLowerCase() === "true";
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
+  const analyticsEnabled = isVercelAnalyticsEnabled();
+
+  // NOTE: `<html lang>` is seeded with the default locale so the root layout
+  // stays statically renderable. `LocaleHtmlSync` updates it on the client
+  // based on the active URL segment. Locale-specific SEO signals (URL
+  // prefixes, metadata, canonical + alternates.languages) remain handled in
+  // the locale-aware routes and metadata.
   return (
     <html lang={defaultLocale}>
       <body
@@ -59,8 +70,8 @@ export default function RootLayout({
             </PageTransition>
           </AppShellProviders>
         </div>
-        <Analytics />
-        <SpeedInsights />
+        {analyticsEnabled ? <Analytics /> : null}
+        {analyticsEnabled ? <SpeedInsights /> : null}
       </body>
     </html>
   );

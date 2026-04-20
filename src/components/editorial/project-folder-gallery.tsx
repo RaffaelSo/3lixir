@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 
 import { SectionShell } from "@/components/layout/section-shell";
+import { useSiteLocale } from "@/contexts/site-locale-context";
 
 type ProjectFolderGalleryProps = {
   slug: string;
@@ -16,6 +17,12 @@ export function ProjectFolderGallery({
   slug,
   imagePaths,
 }: ProjectFolderGalleryProps) {
+  const { locale } = useSiteLocale();
+  const loadMoreLabels = {
+    en: "Load more",
+    de: "Mehr laden",
+    ru: "Показать ещё",
+  } as const;
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const visibleImages = useMemo(
@@ -54,7 +61,7 @@ export function ProjectFolderGallery({
             onClick={() => setVisibleCount((current) => current + PAGE_SIZE)}
             className="inline-flex items-center border border-white/[0.14] bg-white/[0.03] px-8 py-3.5 font-[family-name:var(--font-mono)] text-[0.62rem] font-medium uppercase tracking-[0.3em] text-white/75 transition-[background,border-color] duration-300 hover:border-white/26 hover:bg-white/[0.08]"
           >
-            Load more
+            {loadMoreLabels[locale]}
           </button>
         </div>
       ) : null}

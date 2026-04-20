@@ -1,36 +1,72 @@
+"use client";
+
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { Eyebrow } from "@/components/editorial/typography";
+import { useSiteLocale } from "@/contexts/site-locale-context";
 
-const items = [
-  "Campaign direction and seasonal image worlds",
-  "Editorial concepts for magazines and fashion platforms",
-  "Brand atmosphere, launch language, and digital identity tone",
-];
+const copy = {
+  en: {
+    eyebrow: "Vision",
+    headline:
+      "A visual language grounded in restraint, image intelligence, and fashion-world sensitivity.",
+    body:
+      "The approach is editorial in rhythm and strategic in intent: building distinct visual worlds that feel immediate to agencies, photographers, stylists, and brands operating inside culture.",
+    items: [
+      "Campaign direction and seasonal image worlds",
+      "Editorial concepts for magazines and fashion platforms",
+      "Brand atmosphere, launch language, and digital identity tone",
+    ],
+  },
+  de: {
+    eyebrow: "Vision",
+    headline:
+      "Eine visuelle Sprache, gegründet auf Zurückhaltung, Bildintelligenz und Sensibilität für die Fashion-Welt.",
+    body:
+      "Der Ansatz ist editorial im Rhythmus und strategisch in der Absicht: markante visuelle Welten, die für Agenturen, Fotograf:innen, Stylist:innen und kulturell arbeitende Marken unmittelbar wirken.",
+    items: [
+      "Kampagnenrichtung und saisonale Bildwelten",
+      "Editorial-Konzepte für Magazine und Fashion-Plattformen",
+      "Markenatmosphäre, Launch-Sprache und digitaler Identity-Ton",
+    ],
+  },
+  ru: {
+    eyebrow: "Видение",
+    headline:
+      "Визуальный язык, построенный на сдержанности, image intelligence и чувствительности к миру fashion.",
+    body:
+      "Подход редакционен по ритму и стратегичен по намерению: создавать отдельные визуальные миры, которые мгновенно считываются агентствами, фотографами, стилистами и брендами внутри культуры.",
+    items: [
+      "Направление кампаний и сезонные визуальные миры",
+      "Эдиториальные концепции для журналов и fashion-платформ",
+      "Атмосфера бренда, язык запуска и тон цифровой идентичности",
+    ],
+  },
+} as const;
 
 export function VisionStatement() {
+  const { locale } = useSiteLocale();
+  const text = copy[locale];
+
   return (
     <SectionShell className="border-t border-white/[0.06] py-20 sm:py-28 lg:py-32">
       <div className="grid gap-16 lg:grid-cols-[0.88fr_1.12fr] lg:gap-24">
         <Reveal>
-          <Eyebrow>Vision</Eyebrow>
+          <Eyebrow>{text.eyebrow}</Eyebrow>
           <p className="font-display-editorial mt-6 text-4xl leading-[0.96] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
-            A visual language grounded in restraint, image intelligence, and
-            fashion-world sensitivity.
+            {text.headline}
           </p>
         </Reveal>
 
         <div className="space-y-8">
           <Reveal delay={0.08}>
             <p className="max-w-2xl text-[0.9375rem] leading-[1.75] tracking-[0.02em] text-white/46">
-              The approach is editorial in rhythm and strategic in intent:
-              building distinct visual worlds that feel immediate to agencies,
-              photographers, stylists, and brands operating inside culture.
+              {text.body}
             </p>
           </Reveal>
 
           <div className="space-y-0">
-            {items.map((item, index) => (
+            {text.items.map((item, index) => (
               <Reveal
                 key={item}
                 delay={0.12 + index * 0.06}

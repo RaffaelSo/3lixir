@@ -1,15 +1,27 @@
+"use client";
+
 import Image from "next/image";
 
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { Eyebrow, MetaList } from "@/components/editorial/typography";
 import { Project } from "@/types/project";
+import { useSiteLocale } from "@/contexts/site-locale-context";
 
 type ProjectHeroProps = {
   project: Project;
 };
 
+const labels = {
+  en: { role: "Role", location: "Location", mood: "Mood", season: "Season" },
+  de: { role: "Rolle", location: "Ort", mood: "Stimmung", season: "Saison" },
+  ru: { role: "Роль", location: "Локация", mood: "Настроение", season: "Сезон" },
+} as const;
+
 export function ProjectHero({ project }: ProjectHeroProps) {
+  const { locale } = useSiteLocale();
+  const text = labels[locale];
+
   return (
     <SectionShell className="py-14 sm:py-20 lg:py-24">
       <div className="grid gap-12 lg:gap-16">
@@ -48,10 +60,10 @@ export function ProjectHero({ project }: ProjectHeroProps) {
           <MetaList
             className="mt-4"
             items={[
-              { label: "Role", value: project.role },
-              { label: "Location", value: project.location },
-              { label: "Mood", value: project.mood },
-              { label: "Season", value: `${project.season} ${project.year}` },
+              { label: text.role, value: project.role },
+              { label: text.location, value: project.location },
+              { label: text.mood, value: project.mood },
+              { label: text.season, value: `${project.season} ${project.year}` },
             ]}
           />
         </Reveal>

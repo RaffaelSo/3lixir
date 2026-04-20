@@ -1,9 +1,12 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
+import Image from "next/image";
+
+import { LocaleLink } from "@/components/layout/locale-link";
 import { Reveal } from "@/components/motion/reveal";
 import { cn } from "@/lib/utils";
 import { Project } from "@/types/project";
+import { useSiteLocale } from "@/contexts/site-locale-context";
 
 type ProjectCardEditorialProps = {
   project: Project;
@@ -11,14 +14,22 @@ type ProjectCardEditorialProps = {
   priority?: boolean;
 };
 
+const viewCopy = {
+  en: "View",
+  de: "Ansehen",
+  ru: "Смотреть",
+} as const;
+
 export function ProjectCardEditorial({
   project,
   className,
   priority = false,
 }: ProjectCardEditorialProps) {
+  const { locale } = useSiteLocale();
+
   return (
     <Reveal className={cn("group relative h-full", className)}>
-      <Link
+      <LocaleLink
         href={`/projects/${project.slug}`}
         className="ambient-frame editorial-crop image-vignette-cold group relative flex h-full min-h-[26rem] overflow-hidden md:min-h-[28rem]"
       >
@@ -49,11 +60,11 @@ export function ProjectCardEditorial({
           <div className="flex items-center justify-between gap-4 border-t border-white/[0.08] pt-5 font-[family-name:var(--font-mono)] text-[0.6rem] font-medium uppercase tracking-[0.32em] text-white/40">
             <span className="max-w-[60%] truncate">{project.role}</span>
             <span className="text-white/28 transition duration-700 group-hover:text-[var(--accent)]">
-              View
+              {viewCopy[locale]}
             </span>
           </div>
         </div>
-      </Link>
+      </LocaleLink>
     </Reveal>
   );
 }

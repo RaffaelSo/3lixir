@@ -1,27 +1,23 @@
 /**
  * Central SEO / brand copy for metadata and JSON-LD.
- * Set NEXT_PUBLIC_SITE_URL in production (e.g. https://www.3liksir.com).
+ * Set NEXT_PUBLIC_SITE_URL in production if the canonical domain changes.
  */
 
 const trimTrailingSlash = (url: string) => url.replace(/\/$/, "");
+const DEFAULT_SITE_URL = "https://3liksir.site";
 
 export function getSiteUrl(): string {
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim();
   if (fromEnv) return trimTrailingSlash(fromEnv);
-  if (process.env.VERCEL_URL)
-    return `https://${process.env.VERCEL_URL.replace(/^https?:\/\//, "")}`;
-  return "https://www.3liksir.com";
+  return DEFAULT_SITE_URL;
 }
 
 /**
- * Canonical public URL for legal text and any copy that must not expose
- * Vercel preview hostnames (VERCEL_URL). Uses NEXT_PUBLIC_SITE_URL when set,
- * otherwise the production domain for this site.
+ * Public-facing domain for legal text and any copy shown on the page.
+ * Keep this aligned with metadata/canonical URLs.
  */
 export function getPublicSiteUrl(): string {
-  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  if (fromEnv) return trimTrailingSlash(fromEnv);
-  return "https://3liksir.site";
+  return getSiteUrl();
 }
 
 export const siteConfig = {

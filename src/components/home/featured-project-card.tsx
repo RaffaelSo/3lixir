@@ -1,21 +1,31 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
+import Image from "next/image";
+
+import { LocaleLink } from "@/components/layout/locale-link";
 import { cn } from "@/lib/utils";
 
 import type { Project } from "@/types/project";
+import { useSiteLocale } from "@/contexts/site-locale-context";
 
 type FeaturedProjectCardProps = {
   project: Project;
   index: number;
 };
 
+const viewCopy = {
+  en: "View project",
+  de: "Projekt ansehen",
+  ru: "Смотреть проект",
+} as const;
+
 export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps) {
+  const { locale } = useSiteLocale();
   const flip = index % 2 === 1;
 
   return (
     <article>
-      <Link
+      <LocaleLink
         href={`/projects/${project.slug}`}
         className={cn(
           "group grid min-h-0 grid-cols-1 gap-0 lg:items-stretch",
@@ -26,7 +36,6 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
       >
         <div
           className={cn(
-            // Explicit box sizing only — avoid lg:h-full + aspect-auto (grid min-h-0 can collapse fill parents).
             "relative isolate w-full overflow-hidden bg-[#06080c]",
             "aspect-[4/5] min-h-[18rem] sm:min-h-[20rem]",
             "lg:aspect-[3/4] lg:min-h-[min(72svh,42rem)] lg:w-full",
@@ -78,11 +87,11 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
               </ul>
             ) : null}
             <p className="font-[family-name:var(--font-mono)] text-[0.58rem] font-medium uppercase tracking-[0.34em] text-[var(--accent-dim)] transition duration-700 group-hover:text-[var(--accent)]">
-              View project
+              {viewCopy[locale]}
             </p>
           </div>
         </div>
-      </Link>
+      </LocaleLink>
     </article>
   );
 }

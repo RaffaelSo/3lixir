@@ -1,24 +1,54 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
+import Image from "next/image";
+
+import { LocaleLink } from "@/components/layout/locale-link";
 import { Reveal } from "@/components/motion/reveal";
+import { useSiteLocale } from "@/contexts/site-locale-context";
 import { toOptimizedProjectPublicPath } from "@/lib/optimized-project-image";
 
-const tagline =
-  "Berlin-based couture fashion / experimental design / styling";
+const copy = {
+  en: {
+    ariaLabel: "3liksir — introduction",
+    eyebrow: "Couture · Berlin",
+    tagline: "Berlin-based couture fashion / experimental design / styling",
+    ctaWork: "View work",
+    ctaContact: "Contact / collaborate",
+    imageAlt: "Lookbook cover image.",
+  },
+  de: {
+    ariaLabel: "3liksir — Einführung",
+    eyebrow: "Couture · Berlin",
+    tagline: "Berlin-basierte Couture Fashion / experimentelles Design / Styling",
+    ctaWork: "Arbeiten ansehen",
+    ctaContact: "Kontakt / Kollaboration",
+    imageAlt: "Lookbook-Coverbild.",
+  },
+  ru: {
+    ariaLabel: "3liksir — вступление",
+    eyebrow: "Couture · Берлин",
+    tagline: "Берлинское couture / экспериментальный дизайн / styling",
+    ctaWork: "Смотреть работы",
+    ctaContact: "Контакт / коллаборация",
+    imageAlt: "Обложка лукбука.",
+  },
+} as const;
 
 export function HomeHero() {
+  const { locale } = useSiteLocale();
+  const text = copy[locale];
+
   return (
     <header
       className="relative -mt-[4.75rem] min-h-[100svh] pt-[4.75rem] sm:-mt-[5.25rem] sm:pt-[5.25rem]"
-      aria-label="3liksir — introduction"
+      aria-label={text.ariaLabel}
     >
       <div className="absolute inset-0 z-0">
         <Image
           src={toOptimizedProjectPublicPath(
             "/images/projects/lookbook/COVERShin Jeong Hoon, @sh1nfoto (16).JPEG",
           )}
-          alt="Lookbook cover image."
+          alt={text.imageAlt}
           fill
           priority
           sizes="100vw"
@@ -37,25 +67,25 @@ export function HomeHero() {
       <div className="relative z-10 mx-auto flex min-h-[calc(100svh-4.75rem)] max-w-[1720px] flex-col justify-end px-6 pb-14 pt-24 sm:min-h-[calc(100svh-5.25rem)] sm:px-10 sm:pb-20 lg:px-16 xl:px-20">
         <Reveal className="max-w-[min(100%,56rem)]">
           <p className="font-[family-name:var(--font-mono)] text-[0.58rem] font-medium uppercase tracking-[0.48em] text-white/38">
-            Couture · Berlin
+            {text.eyebrow}
           </p>
           <h1 className="font-display-editorial mt-8 text-[clamp(3.25rem,14vw,9.5rem)] leading-[0.88] tracking-[-0.055em] text-white">
             3liksir
           </h1>
           <p className="mt-10 max-w-xl font-[family-name:var(--font-mono)] text-[0.65rem] font-medium uppercase leading-[1.85] tracking-[0.22em] text-white/52 sm:text-[0.68rem] sm:tracking-[0.26em]">
-            {tagline}
+            {text.tagline}
           </p>
 
           <div className="mt-14 flex flex-col gap-4 sm:mt-20 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
-            <Link
+            <LocaleLink
               href="/projects"
               className="inline-flex w-fit items-center border border-white/[0.14] bg-white/[0.04] px-8 py-4 font-[family-name:var(--font-mono)] text-[0.62rem] font-medium uppercase tracking-[0.32em] text-white transition-[background,border-color] duration-500 hover:border-white/25 hover:bg-white/[0.07]"
             >
-              View work
-            </Link>
-            <Link href="#contact" className="link-editorial w-fit py-1">
-              Contact / collaborate
-            </Link>
+              {text.ctaWork}
+            </LocaleLink>
+            <LocaleLink href="#contact" className="link-editorial w-fit py-1">
+              {text.ctaContact}
+            </LocaleLink>
           </div>
         </Reveal>
       </div>

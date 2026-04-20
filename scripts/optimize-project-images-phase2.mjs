@@ -11,6 +11,17 @@ const MIN_SAVING_RATIO = 0.03;
 const DEFAULT_MAX_WIDTH = 2400;
 const TOP_SAVINGS_LIMIT = 10;
 
+async function statIfExists(filePath) {
+  try {
+    return await stat(filePath);
+  } catch (error) {
+    if (error && typeof error === "object" && "code" in error && error.code === "ENOENT") {
+      return null;
+    }
+    throw error;
+  }
+}
+
 function parseArgs(argv) {
   const args = {
     dryRun: true,
@@ -146,6 +157,37 @@ async function optimizeFile({
 }) {
   const originalStat = await stat(filePath);
   const originalSize = originalStat.size;
+  const outputPath = computeTargetPath({
+    sourcePath: filePath,
+    inputRoot,
+    outputRoot,
+    replace,
+    destinationClaims,
+  });
+  const existingOutputStat = replace ? null : await statIfExists(outputPath);
+
+  if (
+    existingOutputStat &&
+    existingOutputStat.mtimeMs >= originalStat.mtimeMs
+  ) {
+    const savedBytes = Math.max(0, originalSize - existingOutputStat.size);
+    const savedRatio = originalSize > 0 ? savedBytes / originalSize : 0;
+
+    return {
+      filePath,
+      outputPath,
+      originalSize,
+      optimizedSize: existingOutputStat.size,
+      savedBytes,
+      savedRatio,
+      beneficialOptimization:
+        savedBytes > MIN_SAVING_BYTES && savedRatio >= MIN_SAVING_RATIO,
+      resized: false,
+      hasAlpha: false,
+      reusedExisting: true,
+      syncedOutput: false,
+    };
+  }
 
   const source = sharp(filePath, { failOnError: false });
   const metadata = await source.metadata();
@@ -162,18 +204,11 @@ async function optimizeFile({
   const optimizedSize = optimizedBuffer.length;
   const savedBytes = originalSize - optimizedSize;
   const savedRatio = originalSize > 0 ? savedBytes / originalSize : 0;
-  const shouldOptimize =
+  const beneficialOptimization =
     savedBytes > MIN_SAVING_BYTES && savedRatio >= MIN_SAVING_RATIO;
+  const shouldWriteOutput = write;
 
-  const outputPath = computeTargetPath({
-    sourcePath: filePath,
-    inputRoot,
-    outputRoot,
-    replace,
-    destinationClaims,
-  });
-
-  if (write && shouldOptimize) {
+  if (shouldWriteOutput) {
     await mkdir(path.dirname(outputPath), { recursive: true });
     await writeFile(outputPath, optimizedBuffer);
   }
@@ -183,11 +218,13 @@ async function optimizeFile({
     outputPath,
     originalSize,
     optimizedSize,
-    savedBytes: shouldOptimize ? savedBytes : 0,
-    savedRatio: shouldOptimize ? savedRatio : 0,
-    shouldOptimize,
+    savedBytes: beneficialOptimization ? savedBytes : 0,
+    savedRatio: beneficialOptimization ? savedRatio : 0,
+    beneficialOptimization,
     resized: shouldResize,
     hasAlpha,
+    reusedExisting: false,
+    syncedOutput: shouldWriteOutput,
   };
 }
 
@@ -197,8 +234,11 @@ function printReport({
   outputRoot,
   maxWidth,
   scannedCount,
-  optimizedCount,
-  skippedCount,
+  potentialSavingsCount,
+  optimizedThisRunCount,
+  reusedCount,
+  syncedCount,
+  pendingSyncCount,
   totalBefore,
   totalAfter,
   errors,
@@ -214,8 +254,11 @@ function printReport({
   console.log(`Max width: ${maxWidth}px`);
   console.log("");
   console.log(`Files scanned: ${scannedCount}`);
-  console.log(`Files optimized: ${optimizedCount}`);
-  console.log(`Files skipped: ${skippedCount}`);
+  console.log(`Files with potential meaningful savings: ${potentialSavingsCount}`);
+  console.log(`Files optimized this run: ${optimizedThisRunCount}`);
+  console.log(`Files reused: ${reusedCount}`);
+  console.log(`Files synced: ${syncedCount}`);
+  console.log(`Files pending sync: ${pendingSyncCount}`);
   console.log(`Size before: ${formatMB(totalBefore)}`);
   console.log(`Size after: ${formatMB(totalAfter)}`);
   console.log(`Saved: ${formatMB(savedBytes)} (${toPercent(savedRatio)})`);
@@ -249,7 +292,10 @@ async function main() {
 
   let totalBefore = 0;
   let totalAfter = 0;
-  let optimizedCount = 0;
+  let potentialSavingsCount = 0;
+  let optimizedThisRunCount = 0;
+  let reusedCount = 0;
+  let syncedCount = 0;
 
   for (const filePath of files) {
     try {
@@ -265,10 +311,19 @@ async function main() {
 
       results.push(result);
       totalBefore += result.originalSize;
-      totalAfter += result.shouldOptimize ? result.optimizedSize : result.originalSize;
+      totalAfter += result.optimizedSize;
 
-      if (result.shouldOptimize) {
-        optimizedCount += 1;
+      if (result.beneficialOptimization) {
+        potentialSavingsCount += 1;
+        if (!result.reusedExisting) {
+          optimizedThisRunCount += 1;
+        }
+      }
+      if (result.reusedExisting) {
+        reusedCount += 1;
+      }
+      if (result.syncedOutput) {
+        syncedCount += 1;
       }
     } catch (error) {
       errors.push({
@@ -278,9 +333,8 @@ async function main() {
     }
   }
 
-  const skippedCount = files.length - optimizedCount;
   const bestSavings = results
-    .filter((result) => result.shouldOptimize)
+    .filter((result) => result.beneficialOptimization)
     .sort((a, b) => b.savedBytes - a.savedBytes)
     .slice(0, TOP_SAVINGS_LIMIT);
 
@@ -300,8 +354,11 @@ async function main() {
     outputRoot: args.outputDir,
     maxWidth: args.maxWidth,
     scannedCount: files.length,
-    optimizedCount,
-    skippedCount,
+    potentialSavingsCount,
+    optimizedThisRunCount,
+    reusedCount,
+    syncedCount,
+    pendingSyncCount: files.length - reusedCount - syncedCount,
     totalBefore,
     totalAfter,
     errors,

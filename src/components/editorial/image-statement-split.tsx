@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 
+import { LocaleLink } from "@/components/layout/locale-link";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { Eyebrow, Statement } from "@/components/editorial/typography";
@@ -59,12 +59,12 @@ export function ImageStatementSplit({
                   {project.statement}
                 </p>
               </div>
-              <Link
+              <LocaleLink
                 href={`/projects/${project.slug}`}
                 className="link-editorial shrink-0"
               >
                 View narrative
-              </Link>
+              </LocaleLink>
             </div>
           </div>
         </Reveal>

@@ -1,18 +1,5 @@
-import type { Metadata } from "next";
-
-import { ContactFormShell } from "@/components/editorial/contact-form-shell";
-import { ContactLinks } from "@/components/editorial/contact-links";
-
-export const metadata: Metadata = {
-  title: "Contact",
-  description: "Contact 3liksir for campaigns, editorials, and creative collaborations.",
-};
+import { permanentRedirect } from "next/navigation";
 
 export default function ContactPage() {
-  return (
-    <>
-      <ContactLinks />
-      <ContactFormShell />
-    </>
-  );
+  permanentRedirect("/en/contact");
 }

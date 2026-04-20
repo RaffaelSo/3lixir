@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-
+import { LocaleLink } from "@/components/layout/locale-link";
 import { useSiteLocale } from "@/contexts/site-locale-context";
 
 const pairs = {
@@ -10,12 +9,12 @@ const pairs = {
     { href: "/privacy" as const, label: "Privacy" },
   ],
   de: [
-    { href: "/impressum" as const, label: "Impressum" },
-    { href: "/datenschutz" as const, label: "Datenschutz" },
+    { href: "/imprint" as const, label: "Impressum" },
+    { href: "/privacy" as const, label: "Datenschutz" },
   ],
   ru: [
-    { href: "/imprint" as const, label: "Imprint" },
-    { href: "/privacy" as const, label: "Privacy" },
+    { href: "/imprint" as const, label: "Правовая информация" },
+    { href: "/privacy" as const, label: "Конфиденциальность" },
   ],
 } as const;
 
@@ -26,13 +25,13 @@ export function FooterLegalLinks() {
   return (
     <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-[family-name:var(--font-mono)] text-[0.62rem] font-medium uppercase tracking-[0.24em]">
       {items.map((item) => (
-        <Link
+        <LocaleLink
           key={item.href}
           href={item.href}
           className="text-white/52 transition-colors duration-500 hover:text-[var(--accent)]"
         >
           {item.label}
-        </Link>
+        </LocaleLink>
       ))}
     </div>
   );

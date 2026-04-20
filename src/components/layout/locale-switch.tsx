@@ -1,5 +1,7 @@
 "use client";
 
+import { usePathname, useRouter } from "next/navigation";
+
 import { cn } from "@/lib/utils";
 
 import { useSiteLocale } from "@/contexts/site-locale-context";
@@ -14,24 +16,22 @@ const labels: Record<UISiteLocale, string> = {
 const ariaLabels: Record<UISiteLocale, string> = {
   en: "Language",
   de: "Sprache",
-  ru: "Language",
+  ru: "Язык",
 };
 
-type LocaleSwitchMockProps = {
-  /** Compact = header bar; full = optional subtitle for “preview” hint */
+type LocaleSwitchProps = {
+  /** Compact = header bar; full = optional subtitle for locale-route guidance */
   variant?: "compact" | "full";
   className?: string;
 };
 
-/**
- * Switches UI language for shared chrome (footer legal links, `html lang`).
- * Page copy remains English-first; German legal pages stay available under /impressum and /datenschutz.
- */
-export function LocaleSwitchMock({
+export function LocaleSwitch({
   variant = "compact",
   className,
-}: LocaleSwitchMockProps) {
-  const { locale: active, setLocale } = useSiteLocale();
+}: LocaleSwitchProps) {
+  const pathname = usePathname();
+  const router = useRouter();
+  const { locale: active, setLocalePreference, localizeHref } = useSiteLocale();
 
   return (
     <div
@@ -53,7 +53,10 @@ export function LocaleSwitchMock({
               type="button"
               role="radio"
               aria-checked={isOn}
-              onClick={() => setLocale(code)}
+              onClick={() => {
+                setLocalePreference(code);
+                router.push(localizeHref(pathname, code));
+              }}
               className={cn(
                 "min-w-[2.25rem] px-2 py-1.5 font-[family-name:var(--font-mono)] text-[0.58rem] font-medium uppercase tracking-[0.22em] transition-[color,background] duration-300",
                 isOn
@@ -69,8 +72,10 @@ export function LocaleSwitchMock({
       {variant === "full" ? (
         <p className="font-[family-name:var(--font-mono)] text-[0.52rem] uppercase tracking-[0.2em] text-white/28">
           {active === "de"
-            ? "Rechtstexte: DE unter Impressum / Datenschutz"
-            : "Legal (EN): Imprint / Privacy — DE versions linked on those pages"}
+            ? "DE ROUTES LIVE UNDER /DE/..."
+            : active === "ru"
+              ? "RU ROUTES LIVE UNDER /RU/..."
+              : "EN ROUTES LIVE UNDER /EN/..."}
         </p>
       ) : null}
     </div>

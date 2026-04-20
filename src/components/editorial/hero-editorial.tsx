@@ -1,6 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
+import Image from "next/image";
+
+import { LocaleLink } from "@/components/layout/locale-link";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { Eyebrow } from "@/components/editorial/typography";
@@ -40,15 +42,15 @@ export function HeroEditorial({ project }: HeroEditorialProps) {
               </p>
 
               <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-4 sm:mt-16">
-                <Link
+                <LocaleLink
                   href="/projects"
                   className="link-editorial link-editorial-strong"
                 >
                   View projects
-                </Link>
-                <Link href="/contact" className="link-editorial">
+                </LocaleLink>
+                <LocaleLink href="/contact" className="link-editorial">
                   Inquire
-                </Link>
+                </LocaleLink>
               </div>
 
               <div className="mt-16 grid gap-10 border-t border-white/[0.07] pt-10 sm:mt-20 sm:grid-cols-2 sm:gap-12 sm:pt-12">
@@ -101,12 +103,12 @@ export function HeroEditorial({ project }: HeroEditorialProps) {
                     {project.excerpt}
                   </p>
                 </div>
-                <Link
+                <LocaleLink
                   href={`/projects/${project.slug}`}
                   className="link-editorial shrink-0 self-end text-white/55"
                 >
                   Open
-                </Link>
+                </LocaleLink>
               </div>
             </div>
           </div>

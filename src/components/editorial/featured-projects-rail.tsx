@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 
+import { LocaleLink } from "@/components/layout/locale-link";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { Eyebrow, Statement } from "@/components/editorial/typography";
@@ -31,7 +31,7 @@ export function FeaturedProjectsRail({
       <div className="space-y-24 lg:space-y-32">
         {projects.map((project, index) => (
           <Reveal key={project.slug} delay={index * 0.08}>
-            <Link
+            <LocaleLink
               href={`/projects/${project.slug}`}
               className="surface-quiet ambient-frame group grid gap-8 overflow-hidden p-5 sm:gap-10 sm:p-8 lg:grid-cols-2 lg:gap-12 lg:p-10"
             >
@@ -78,7 +78,7 @@ export function FeaturedProjectsRail({
                   </div>
                 </div>
               </div>
-            </Link>
+            </LocaleLink>
           </Reveal>
         ))}
       </div>

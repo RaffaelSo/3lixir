@@ -1,38 +1,60 @@
+"use client";
+
 import Link from "next/link";
 
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { Eyebrow, Statement } from "@/components/editorial/typography";
+import { useSiteLocale } from "@/contexts/site-locale-context";
 import { siteConfig } from "@/lib/seo-config";
 
-const links = [
-  {
-    label: "Email",
-    value: "3liksirdesigns@gmail.com",
-    href: "mailto:3liksirdesigns@gmail.com",
+const copy = {
+  en: {
+    eyebrow: "Contact",
+    statement:
+      "For commissions, editorial collaborations, and culturally aligned partnerships.",
+    links: [
+      { label: "Email", value: "3liksirdesigns@gmail.com", href: "mailto:3liksirdesigns@gmail.com" },
+      { label: "Instagram", value: "@3liksir", href: siteConfig.instagramUrl },
+      { label: "Base", value: "Berlin", href: "#" },
+    ],
   },
-  {
-    label: "Instagram",
-    value: "@3liksir",
-    href: siteConfig.instagramUrl,
+  de: {
+    eyebrow: "Kontakt",
+    statement:
+      "Für Aufträge, editoriale Kollaborationen und kulturell präzise Partnerschaften.",
+    links: [
+      { label: "E-Mail", value: "3liksirdesigns@gmail.com", href: "mailto:3liksirdesigns@gmail.com" },
+      { label: "Instagram", value: "@3liksir", href: siteConfig.instagramUrl },
+      { label: "Standort", value: "Berlin", href: "#" },
+    ],
   },
-  { label: "Base", value: "Berlin", href: "#" },
-];
+  ru: {
+    eyebrow: "Контакт",
+    statement:
+      "Для заказов, эдиториальных коллабораций и культурно точных партнёрств.",
+    links: [
+      { label: "Почта", value: "3liksirdesigns@gmail.com", href: "mailto:3liksirdesigns@gmail.com" },
+      { label: "Instagram", value: "@3liksir", href: siteConfig.instagramUrl },
+      { label: "База", value: "Berlin", href: "#" },
+    ],
+  },
+} as const;
 
 export function ContactLinks() {
+  const { locale } = useSiteLocale();
+  const content = copy[locale];
+
   return (
     <SectionShell className="py-20 sm:py-28 lg:py-32">
       <div className="grid gap-16 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
         <Reveal>
-          <Eyebrow>Contact</Eyebrow>
-          <Statement className="mt-6 max-w-md">
-            For commissions, editorial collaborations, and culturally aligned
-            partnerships.
-          </Statement>
+          <Eyebrow>{content.eyebrow}</Eyebrow>
+          <Statement className="mt-6 max-w-md">{content.statement}</Statement>
         </Reveal>
 
         <div className="space-y-0">
-          {links.map((item, index) => (
+          {content.links.map((item, index) => (
             <Reveal
               key={item.label}
               delay={index * 0.08}

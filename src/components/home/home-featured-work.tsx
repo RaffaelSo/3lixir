@@ -1,16 +1,38 @@
+"use client";
+
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
-
 import { FeaturedProjectCard } from "@/components/home/featured-project-card";
 import { HomeSectionHeading } from "@/components/home/home-section-heading";
+import { useSiteLocale } from "@/contexts/site-locale-context";
+import { getFeaturedProjects } from "@/data/projects";
 
-import type { Project } from "@/types/project";
+const copy = {
+  en: {
+    eyebrow: "Work",
+    title: "Featured",
+    description:
+      "Selected sequences — image-led, paced like a lookbook, not a template grid.",
+  },
+  de: {
+    eyebrow: "Arbeit",
+    title: "Featured",
+    description:
+      "Ausgewählte Sequenzen — bildgeführt, im Rhythmus eines Lookbooks statt eines Template-Grids.",
+  },
+  ru: {
+    eyebrow: "Работы",
+    title: "Избранное",
+    description:
+      "Выбранные последовательности — с ритмом lookbook, а не шаблонной сетки.",
+  },
+} as const;
 
-type HomeFeaturedWorkProps = {
-  projects: Project[];
-};
+export function HomeFeaturedWork() {
+  const { locale } = useSiteLocale();
+  const projects = getFeaturedProjects(locale);
+  const text = copy[locale];
 
-export function HomeFeaturedWork({ projects }: HomeFeaturedWorkProps) {
   return (
     <SectionShell
       as="section"
@@ -19,9 +41,9 @@ export function HomeFeaturedWork({ projects }: HomeFeaturedWorkProps) {
     >
       <HomeSectionHeading
         id="featured-heading"
-        eyebrow="Work"
-        title="Featured"
-        description="Selected sequences — image-led, paced like a lookbook, not a template grid."
+        eyebrow={text.eyebrow}
+        title={text.title}
+        description={text.description}
         align="split"
       />
 

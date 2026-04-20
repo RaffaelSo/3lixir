@@ -1,16 +1,18 @@
+"use client";
+
 import Link from "next/link";
 
+import { LocaleLink } from "@/components/layout/locale-link";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { Eyebrow } from "@/components/editorial/typography";
+import { useSiteLocale } from "@/contexts/site-locale-context";
+import { getHomeContent } from "@/data/home";
 
-import type { HomeContent } from "@/types/home";
+export function HomeContactCta() {
+  const { locale } = useSiteLocale();
+  const content = getHomeContent(locale).contact;
 
-type HomeContactCtaProps = {
-  content: HomeContent["contact"];
-};
-
-export function HomeContactCta({ content }: HomeContactCtaProps) {
   return (
     <SectionShell
       as="section"
@@ -43,7 +45,7 @@ export function HomeContactCta({ content }: HomeContactCtaProps) {
           <div className="surface-quiet grid gap-8 p-8 sm:p-10">
             <div className="flex flex-col gap-3 border-b border-white/[0.07] pb-8">
               <p className="font-[family-name:var(--font-mono)] text-[0.58rem] font-medium uppercase tracking-[0.34em] text-white/28">
-                Email
+                {content.emailLabel}
               </p>
               <Link
                 href={`mailto:${content.email}`}
@@ -54,7 +56,7 @@ export function HomeContactCta({ content }: HomeContactCtaProps) {
             </div>
             <div className="flex flex-col gap-3">
               <p className="font-[family-name:var(--font-mono)] text-[0.58rem] font-medium uppercase tracking-[0.34em] text-white/28">
-                Instagram
+                {content.instagramHeading}
               </p>
               <Link
                 href={content.instagramHref}
@@ -66,9 +68,9 @@ export function HomeContactCta({ content }: HomeContactCtaProps) {
               </Link>
             </div>
           </div>
-          <Link href="/contact" className="link-editorial link-editorial-strong w-fit">
-            Full contact
-          </Link>
+          <LocaleLink href="/contact" className="link-editorial link-editorial-strong w-fit">
+            {content.fullContactLabel}
+          </LocaleLink>
         </Reveal>
       </div>
     </SectionShell>

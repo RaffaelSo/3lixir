@@ -1,16 +1,17 @@
+"use client";
+
 import Image from "next/image";
 
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { Eyebrow } from "@/components/editorial/typography";
+import { useSiteLocale } from "@/contexts/site-locale-context";
+import { getHomeContent } from "@/data/home";
 
-import type { HomeContent } from "@/types/home";
+export function HomeWorldCyber() {
+  const { locale } = useSiteLocale();
+  const content = getHomeContent(locale).world;
 
-type HomeWorldCyberProps = {
-  content: HomeContent["world"];
-};
-
-export function HomeWorldCyber({ content }: HomeWorldCyberProps) {
   return (
     <SectionShell
       as="section"

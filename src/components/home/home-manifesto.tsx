@@ -1,14 +1,15 @@
+"use client";
+
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { Eyebrow } from "@/components/editorial/typography";
+import { useSiteLocale } from "@/contexts/site-locale-context";
+import { getHomeContent } from "@/data/home";
 
-import type { HomeContent } from "@/types/home";
+export function HomeManifesto() {
+  const { locale } = useSiteLocale();
+  const content = getHomeContent(locale).manifesto;
 
-type HomeManifestoProps = {
-  content: HomeContent["manifesto"];
-};
-
-export function HomeManifesto({ content }: HomeManifestoProps) {
   return (
     <SectionShell
       as="section"
