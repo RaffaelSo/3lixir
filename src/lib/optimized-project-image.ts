@@ -41,5 +41,5 @@ export function toOptimizedProjectPublicPath(legacyPublicUrl: string): string {
   const slug = decoded.slice(0, slash);
   const file = decoded.slice(slash + 1);
   const relative = optimizedRelativePath(slug, file);
-  return encodeURI(`${OPTIMIZED_PREFIX}${relative}`);
+  return encodeURI(`${OPTIMIZED_PREFIX}${relative}`).replace(/\+/g, "%2B");
 }

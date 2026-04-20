@@ -69,7 +69,10 @@ async function buildLegacyToOptimizedUrlMap() {
       projectsBasePath,
       destinationClaims,
     );
-    map.set(legacyKey, encodeURI(`/images/projects-optimized/${optRel}`));
+    map.set(
+      legacyKey,
+      encodeURI(`/images/projects-optimized/${optRel}`).replace(/\+/g, "%2B"),
+    );
   }
 
   return map;

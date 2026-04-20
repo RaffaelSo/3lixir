@@ -1,12 +1,12 @@
 export const projectImagesBySlug = {
   "arctica-3d": [
-    "/images/projects-optimized/arctica-3d/desigh%203%20+scene_6.webp",
-    "/images/projects-optimized/arctica-3d/desigh%203%20+scene_8.webp",
-    "/images/projects-optimized/arctica-3d/desigh%203%20+scene_9.webp",
+    "/images/projects-optimized/arctica-3d/desigh%203%20%2Bscene_6.webp",
+    "/images/projects-optimized/arctica-3d/desigh%203%20%2Bscene_8.webp",
+    "/images/projects-optimized/arctica-3d/desigh%203%20%2Bscene_9.webp",
     "/images/projects-optimized/arctica-3d/design%204%203_1.webp",
     "/images/projects-optimized/arctica-3d/design%204%203.webp",
     "/images/projects-optimized/arctica-3d/DEsign%204%20final_1.webp",
-    "/images/projects-optimized/arctica-3d/Furr%20dress+%20scene_5.webp",
+    "/images/projects-optimized/arctica-3d/Furr%20dress%2B%20scene_5.webp",
     "/images/projects-optimized/arctica-3d/IMG_4982.webp",
     "/images/projects-optimized/arctica-3d/IMG_4984.webp",
     "/images/projects-optimized/arctica-3d/IMG_4985.webp",
