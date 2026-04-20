@@ -5,13 +5,15 @@ import Image from "next/image";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { useSiteLocale } from "@/contexts/site-locale-context";
+import { toOptimizedProjectPublicPath } from "@/lib/optimized-project-image";
 
-const portraitImage =
-  "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1600&q=80";
+const portraitImage = toOptimizedProjectPublicPath(
+  "/images/projects/lookbook/COVERShin Jeong Hoon, @sh1nfoto (16).JPEG",
+);
 
 const copy = {
   en: {
-    alt: "Portrait placeholder for fashion creative direction.",
+    alt: "3liksir lookbook cover — fashion creative direction.",
     toneLabel: "Working tone",
     toneBody:
       "Mysterious, image-led, and highly controlled. Each project is structured to feel singular rather than trend-compliant.",
@@ -23,7 +25,7 @@ const copy = {
       "Strong visual identity that prompts contact and conversation.",
   },
   de: {
-    alt: "Porträt-Platzhalter für Fashion Creative Direction.",
+    alt: "3liksir Lookbook-Cover — Fashion Creative Direction.",
     toneLabel: "Arbeitsmodus",
     toneBody:
       "Mysteriös, bildgeführt und stark kontrolliert. Jedes Projekt ist so gebaut, dass es singulär wirkt statt trendkonform.",
@@ -35,7 +37,7 @@ const copy = {
       "Eine starke visuelle Identität, die Kontakt und Gespräch auslöst.",
   },
   ru: {
-    alt: "Портретный placeholder для fashion creative direction.",
+    alt: "Обложка лукбука 3liksir — fashion creative direction.",
     toneLabel: "Рабочий тон",
     toneBody:
       "Загадочный, image-led и жёстко контролируемый. Каждый проект собран так, чтобы ощущаться единичным, а не трендово-унифицированным.",

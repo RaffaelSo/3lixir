@@ -65,8 +65,8 @@ If content changes are requested, they should usually happen in `src/data/projec
 
 - The app uses the **Next.js App Router**
 - Path alias `@/*` maps to `src/*`
-- Remote images are currently configured for `images.unsplash.com` in `next.config.ts`
-- The contact form in `src/components/editorial/contact-form-shell.tsx` is currently presentational only
+- All imagery is served from the local `public/images/...` tree; no remote image hosts are allow-listed in `next.config.ts`
+- The contact form in `src/components/editorial/contact-form-shell.tsx` is currently presentational only; submissions are hard-disabled unless `CONTACT_FORM_ENABLED=true`
 - No automated test setup is currently configured in `package.json`
 
 ## Image Performance
