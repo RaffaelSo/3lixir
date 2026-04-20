@@ -32,17 +32,17 @@ const linkLabels = {
 
 const copy = {
   en: {
-    inquire: "Inquire",
+    inquire: "Connect",
     menu: "Menu",
     toggleNavigation: "Toggle navigation",
   },
   de: {
-    inquire: "Anfragen",
+    inquire: "Kontakt",
     menu: "Menü",
     toggleNavigation: "Navigation umschalten",
   },
   ru: {
-    inquire: "Запрос",
+    inquire: "Связь",
     menu: "Меню",
     toggleNavigation: "Переключить навигацию",
   },

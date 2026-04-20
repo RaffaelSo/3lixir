@@ -8,30 +8,30 @@ import { useSiteLocale } from "@/contexts/site-locale-context";
 
 const copy = {
   en: {
-    eyebrow: "Collaborations",
+    eyebrow: "Visibility",
     statement:
-      "Open to campaigns, editorials, and brand worlds that need a sharper cultural presence.",
+      "Following the project world before public commercial launch.",
     body:
-      "For commissions, creative partnerships, and visual identity work, inquiries are handled personally.",
-    contact: "Get in touch",
+      "Updates, archive expansion, and public channels stay active while service offerings are prepared.",
+    contact: "Stay in touch",
     archive: "Browse archive",
   },
   de: {
-    eyebrow: "Kollaborationen",
+    eyebrow: "Sichtbarkeit",
     statement:
-      "Offen für Campaigns, Editorials und Markenwelten, die eine schärfere kulturelle Präsenz brauchen.",
+      "Die Projektwelt begleiten, bevor der kommerzielle Start öffentlich erfolgt.",
     body:
-      "Anfragen zu Aufträgen, kreativen Partnerschaften und Identity-Arbeit werden persönlich bearbeitet.",
-    contact: "Kontakt",
+      "Updates, Archiverweiterung und öffentliche Kanäle bleiben aktiv, während das Service-Angebot vorbereitet wird.",
+    contact: "In Kontakt bleiben",
     archive: "Archiv",
   },
   ru: {
-    eyebrow: "Коллаборации",
+    eyebrow: "Видимость",
     statement:
-      "Открыто для campaigns, editorials и бренд-миров, которым нужно более чёткое культурное присутствие.",
+      "Следить за проектным миром до публичного коммерческого запуска.",
     body:
-      "Запросы по заказам, креативным партнёрствам и работе над identity обрабатываются лично.",
-    contact: "Контакт",
+      "Обновления, расширение архива и публичные каналы остаются активными, пока сервисное предложение готовится.",
+    contact: "Оставаться на связи",
     archive: "Архив",
   },
 } as const;

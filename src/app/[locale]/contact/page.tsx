@@ -13,15 +13,15 @@ type LocalePageProps = {
 const metadataCopy: Record<UISiteLocale, { title: string; description: string }> = {
   en: {
     title: "Contact",
-    description: "Contact 3liksir for campaigns, editorials, and creative collaborations.",
+    description: "Contact 3liksir for updates, visibility, and general project communication.",
   },
   de: {
     title: "Kontakt",
-    description: "Kontakt zu 3liksir für Campaigns, Editorials und kreative Kollaborationen.",
+    description: "Kontakt zu 3liksir für Updates, Sichtbarkeit und allgemeine Projektkommunikation.",
   },
   ru: {
     title: "Контакт",
-    description: "Контакт с 3liksir по вопросам campaigns, editorials и creative-коллабораций.",
+    description: "Контакт с 3liksir по вопросам обновлений, видимости и общей коммуникации по проекту.",
   },
 };
 

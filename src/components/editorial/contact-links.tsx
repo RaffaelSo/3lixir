@@ -12,7 +12,7 @@ const copy = {
   en: {
     eyebrow: "Contact",
     statement:
-      "For commissions, editorial collaborations, and culturally aligned partnerships.",
+      "For visibility, updates, and general project communication.",
     links: [
       { label: "Email", value: "3liksirdesigns@gmail.com", href: "mailto:3liksirdesigns@gmail.com" },
       { label: "Instagram", value: "@3liksir", href: siteConfig.instagramUrl },
@@ -22,7 +22,7 @@ const copy = {
   de: {
     eyebrow: "Kontakt",
     statement:
-      "Für Aufträge, Editorial-Kollaborationen und Partnerschaften mit kulturellem Gespür.",
+      "Für Sichtbarkeit, Updates und allgemeine Projektkommunikation.",
     links: [
       { label: "E-Mail", value: "3liksirdesigns@gmail.com", href: "mailto:3liksirdesigns@gmail.com" },
       { label: "Instagram", value: "@3liksir", href: siteConfig.instagramUrl },
@@ -32,7 +32,7 @@ const copy = {
   ru: {
     eyebrow: "Контакт",
     statement:
-      "Для заказов, editorial-коллабораций и партнёрств с культурной осознанностью.",
+      "Для видимости, обновлений и общей коммуникации по проекту.",
     links: [
       { label: "Email", value: "3liksirdesigns@gmail.com", href: "mailto:3liksirdesigns@gmail.com" },
       { label: "Instagram", value: "@3liksir", href: siteConfig.instagramUrl },
