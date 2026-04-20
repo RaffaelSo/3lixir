@@ -6,6 +6,8 @@ coverage
 *.log
 .vercel
 .tools/
+.artifacts/playwright/
+playwright-smoke.png
 *.tsbuildinfo
 .env
 .env.local
