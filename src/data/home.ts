@@ -25,7 +25,7 @@ const homeContentByLocale = {
     statement: localized(
       "Couture as sculpture — garments as bodies of light, shadow, and tension.",
       "Couture als Skulptur — Kleidungsstücke als Körper aus Licht, Schatten und Spannung.",
-      "Кутюр как скульптура — одежда как тело из света, тени и напряжения.",
+      "Couture как скульптура — одежда как тело из света, тени и напряжения.",
     ),
     paragraphs: localized(
       [
@@ -33,12 +33,12 @@ const homeContentByLocale = {
         "The language is sculptural, severe when needed, and always image-first: fewer words, more atmosphere.",
       ],
       [
-        "3liksir ist ein Berliner Studio für Couture Fashion und experimentelles Design. Die Arbeit bewegt sich zwischen präzisem Tailoring, cyber-informierter Silhouette und Materialien, die das Gewöhnliche verweigern.",
-        "Die Sprache ist skulptural, im richtigen Moment streng und immer bildgeführt: weniger Worte, mehr Atmosphäre.",
+        "3liksir ist ein Berliner Studio für Couture Fashion und experimentelles Design. Die Arbeit bewegt sich zwischen präzisem Tailoring, cyber-geprägten Silhouetten und Materialien abseits des Gewöhnlichen.",
+        "Die Sprache ist skulptural, dort streng, wo es nötig ist, und immer bildzentriert: weniger Worte, mehr Atmosphäre.",
       ],
       [
-        "3liksir — берлинская студия кутюрной моды и экспериментального дизайна. Работа строится между точным тейлорингом, кибер-силуэтом и материалами, которые отказываются быть обычными.",
-        "Этот язык скульптурен, при необходимости строг и всегда строится через образ: меньше слов, больше атмосферы.",
+        "3liksir — берлинская студия couture-моды и экспериментального дизайна. Работа строится на точном tailoring, кибер-силуэтах и материалах, выходящих за рамки привычного.",
+        "Язык скульптурный, строгий там, где это нужно, и всегда выстроен вокруг образа: меньше слов, больше атмосферы.",
       ],
     ),
   },
@@ -56,10 +56,10 @@ const homeContentByLocale = {
       ],
       [
         "Ein Universum aus Chromdämmerung, ritueller Haltung und Kleidung, die sich wie Architektur verhält.",
-        "Keine Nostalgie — sondern eine Vorwärtsgrammatik für Körper, Kameras und die Räume dazwischen.",
+        "Keine Nostalgie, sondern eine zukunftsgewandte Grammatik für Körper, Kameras und die Räume dazwischen.",
       ],
       [
-        "Вселенная, собранная из хромовых сумерек, ритуальной позы и одежды, которая ведёт себя как архитектура.",
+        "Вселенная из хромовых сумерек, ритуальной позы и одежды, которая ведёт себя как архитектура.",
         "Это не ностальгия, а новая грамматика для тел, камер и пространства между ними.",
       ],
     ),
@@ -87,18 +87,18 @@ const homeContentByLocale = {
         "Couture und experimentelle Pieces",
         "Styling für Editorials und Kampagnen",
         "Creative Direction & Bildsprache",
-        "Markengerechte Kollaborationen",
+        "Kollaborationen auf Markenhaltung",
       ],
       [
-        "Кутюр и экспериментальные изделия",
-        "Стайлинг для эдиториалов и кампаний",
-        "Креативное направление и визуальный язык",
-        "Коллаборации, точно совпадающие с брендом",
+        "Couture и экспериментальные изделия",
+        "Styling для editorials и кампаний",
+        "Creative direction и визуальный язык",
+        "Коллаборации в резонансе с брендом",
       ],
     ),
-    emailLabel: localized("Email", "E-Mail", "Почта"),
+    emailLabel: localized("Email", "E-Mail", "Email"),
     instagramHeading: localized("Instagram", "Instagram", "Instagram"),
-    fullContactLabel: localized("Full contact", "Kontakt komplett", "Полный контакт"),
+    fullContactLabel: localized("Full contact", "Alle Kontakte", "Все контакты"),
   },
 } as const;
 

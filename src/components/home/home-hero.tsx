@@ -19,18 +19,18 @@ const copy = {
   de: {
     ariaLabel: "3liksir — Einführung",
     eyebrow: "Couture · Berlin",
-    tagline: "Berlin-basierte Couture Fashion / experimentelles Design / Styling",
+    tagline: "Couture Fashion · experimentelles Design · Styling aus Berlin",
     ctaWork: "Arbeiten ansehen",
-    ctaContact: "Kontakt / Kollaboration",
-    imageAlt: "Lookbook-Coverbild.",
+    ctaContact: "Kontakt & Kollaboration",
+    imageAlt: "Lookbook-Cover.",
   },
   ru: {
     ariaLabel: "3liksir — вступление",
     eyebrow: "Couture · Берлин",
-    tagline: "Берлинское couture / экспериментальный дизайн / styling",
+    tagline: "Couture · экспериментальный дизайн · styling из Берлина",
     ctaWork: "Смотреть работы",
-    ctaContact: "Контакт / коллаборация",
-    imageAlt: "Обложка лукбука.",
+    ctaContact: "Контакт и коллаборации",
+    imageAlt: "Обложка lookbook.",
   },
 } as const;
 

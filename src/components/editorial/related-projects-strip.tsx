@@ -14,7 +14,7 @@ type RelatedProjectsStripProps = {
 const copy = {
   en: { eyebrow: "Related projects", statement: "Further worlds from the archive." },
   de: { eyebrow: "Verwandte Projekte", statement: "Weitere Welten aus dem Archiv." },
-  ru: { eyebrow: "Связанные проекты", statement: "Другие миры из архива." },
+  ru: { eyebrow: "Смежные проекты", statement: "Другие миры из архива." },
 } as const;
 
 export function RelatedProjectsStrip({

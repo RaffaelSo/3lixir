@@ -21,12 +21,12 @@ const metadataCopy: Record<UISiteLocale, { title: string; description: string }>
   de: {
     title: "About",
     description:
-      "Kreative Positionierung, künstlerische Richtung und Perspektive hinter 3liksir.",
+      "Kreative Positionierung, künstlerische Haltung und Perspektive hinter 3liksir.",
   },
   ru: {
     title: "About",
     description:
-      "Креативная позиция, художественное направление и перспектива проекта 3liksir.",
+      "Creative direction, художественная позиция и взгляд проекта 3liksir.",
   },
 };
 

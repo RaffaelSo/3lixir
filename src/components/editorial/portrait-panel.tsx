@@ -26,9 +26,9 @@ const copy = {
   },
   de: {
     alt: "3liksir Lookbook-Cover — Fashion Creative Direction.",
-    toneLabel: "Arbeitsmodus",
+    toneLabel: "Haltung",
     toneBody:
-      "Mysteriös, bildgeführt und stark kontrolliert. Jedes Projekt ist so gebaut, dass es singulär wirkt statt trendkonform.",
+      "Mysteriös, bildzentriert und präzise kontrolliert. Jedes Projekt ist so gebaut, dass es eigenständig wirkt, nicht trendkonform.",
     audienceLabel: "Audience",
     audienceBody:
       "Agenturen, Marken, Stylist:innen, Fotograf:innen und die erweiterte kreative Szene.",
@@ -37,13 +37,13 @@ const copy = {
       "Eine starke visuelle Identität, die Kontakt und Gespräch auslöst.",
   },
   ru: {
-    alt: "Обложка лукбука 3liksir — fashion creative direction.",
-    toneLabel: "Рабочий тон",
+    alt: "Обложка lookbook 3liksir — fashion creative direction.",
+    toneLabel: "Тональность",
     toneBody:
-      "Загадочный, image-led и жёстко контролируемый. Каждый проект собран так, чтобы ощущаться единичным, а не трендово-унифицированным.",
+      "Загадочный, выстроенный вокруг образа, чётко контролируемый. Каждый проект собран так, чтобы ощущаться самостоятельным, а не трендово-унифицированным.",
     audienceLabel: "Аудитория",
     audienceBody:
-      "Агентства, бренды, стилисты, фотографы и расширенная креативная сцена.",
+      "Агентства, бренды, стилисты, фотографы и расширенная creative-среда.",
     priorityLabel: "Приоритет",
     priorityBody:
       "Сильная визуальная идентичность, которая запускает контакт и разговор.",

@@ -16,16 +16,16 @@ const copy = {
   de: {
     eyebrow: "About",
     statement:
-      "Creative Direction für Fashion-Arbeit, die eine schärfere emotionale Temperatur braucht.",
+      "Creative Direction für Fashion-Projekte mit Bedarf nach einer schärferen emotionalen Temperatur.",
     body:
-      "3liksir entwickelt Bildsysteme für Fashion Labels, Editorials und kulturell präzise Kollaborationen, die mehr Präsenz, mehr Mysterium und mehr visuelle Erinnerung suchen. Die Arbeit bewegt sich zwischen Kampagne, Ausstellung und Identity Design.",
+      "3liksir entwickelt Bildsysteme für Fashion-Labels, Editorials und kulturell bewusst arbeitende Kollaborationspartner — für mehr Präsenz, mehr Geheimnis und höheren Wiedererkennungswert. Die Arbeit bewegt sich zwischen Campaign, Exhibition und Identity Design.",
   },
   ru: {
     eyebrow: "О проекте",
     statement:
-      "Креативное направление для fashion-работы, которой нужна более острая эмоциональная температура.",
+      "Creative direction для fashion-проектов, которым нужна более острая эмоциональная температура.",
     body:
-      "3liksir разрабатывает визуальные системы для fashion-брендов, эдиториалов и культурно точных коллабораций, которым нужны присутствие, загадка и визуальная память. Результат находится между кампанией, выставкой и identity design.",
+      "3liksir разрабатывает визуальные системы для fashion-брендов, editorials и коллабораций с культурной осознанностью — когда важны присутствие, загадка и устойчивый визуальный код. Работа существует между campaign, exhibition и identity design.",
   },
 } as const;
 

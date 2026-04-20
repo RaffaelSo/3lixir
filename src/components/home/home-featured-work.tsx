@@ -18,13 +18,13 @@ const copy = {
     eyebrow: "Arbeit",
     title: "Featured",
     description:
-      "Ausgewählte Sequenzen — bildgeführt, im Rhythmus eines Lookbooks statt eines Template-Grids.",
+      "Ausgewählte Sequenzen — bildzentriert, im Rhythmus eines Lookbooks statt eines Template-Grids.",
   },
   ru: {
     eyebrow: "Работы",
     title: "Избранное",
     description:
-      "Выбранные последовательности — с ритмом lookbook, а не шаблонной сетки.",
+      "Избранные серии — выстроенные вокруг образа, в ритме lookbook, а не шаблонной сетки.",
   },
 } as const;
 

@@ -17,11 +17,11 @@ const metadataCopy: Record<UISiteLocale, { title: string; description: string }>
   },
   de: {
     title: "Kontakt",
-    description: "Kontaktiere 3liksir für Kampagnen, Editorials und kreative Kollaborationen.",
+    description: "Kontakt zu 3liksir für Campaigns, Editorials und kreative Kollaborationen.",
   },
   ru: {
     title: "Контакт",
-    description: "Свяжитесь с 3liksir по вопросам кампаний, эдиториалов и творческих коллабораций.",
+    description: "Контакт с 3liksir по вопросам campaigns, editorials и creative-коллабораций.",
   },
 };
 

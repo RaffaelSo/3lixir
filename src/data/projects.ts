@@ -79,9 +79,9 @@ const projectRecords: LocalizedProjectRecord[] = [
     role: localized(
       "Creative Direction",
       "Creative Direction",
-      "Креативное направление",
+      "Creative direction",
     ),
-    category: localized("Campaign", "Kampagne", "Кампания"),
+    category: localized("Campaign", "Kampagne", "Campaign"),
     location: localized("Digital Studio", "Digital Studio", "Digital Studio"),
     excerpt: localized(
       "A synthetic nature study with high-contrast silhouettes, liquid textures, and speculative styling.",
@@ -90,13 +90,13 @@ const projectRecords: LocalizedProjectRecord[] = [
     ),
     statement: localized(
       "A forest imagined through code, armor, and organic distortion.",
-      "Ein Wald, vorgestellt durch Code, Rüstung und organische Verzerrung.",
-      "Лес, воображённый через код, броню и органическую деформацию.",
+      "Ein Wald, gedacht durch Code, Rüstung und organische Verzerrung.",
+      "Лес, собранный из кода, брони и органической деформации.",
     ),
     description: localized(
       "Cyber Forest explores a hybrid environment where natural references are re-rendered with digital materiality and editorial pacing.",
-      "Cyber Forest untersucht eine hybride Umgebung, in der natürliche Referenzen mit digitaler Materialität und editorischem Rhythmus neu gerendert werden.",
-      "Cyber Forest исследует гибридную среду, где природные отсылки пересобраны через цифровую материальность и редакционный ритм.",
+      "Cyber Forest untersucht eine hybride Umgebung, in der natürliche Referenzen mit digitaler Materialität und Editorial-Rhythmus neu gerendert werden.",
+      "Cyber Forest исследует гибридную среду, где природные отсылки пересобраны через цифровую материальность и editorial-ритм.",
     ),
     mood: localized(
       "Synthetic nature, polished darkness, future organic",
@@ -105,8 +105,8 @@ const projectRecords: LocalizedProjectRecord[] = [
     ),
     tags: localized(
       ["Campaign", "Direction", "Editorial"],
-      ["Kampagne", "Direction", "Editorial"],
-      ["Кампания", "Направление", "Эдиториал"],
+      ["Campaign", "Direction", "Editorial"],
+      ["Campaign", "Direction", "Editorial"],
     ),
     creditsLabel: localized("Project", "Projekt", "Проект"),
     blocks: [
@@ -172,13 +172,13 @@ const projectRecords: LocalizedProjectRecord[] = [
     ),
     title: localized("Cyber Wasteland", "Cyber Wasteland", "Cyber Wasteland"),
     season: localized("Collection", "Kollektion", "Коллекция"),
-    role: localized("Image Direction", "Image Direction", "Визуальное направление"),
-    category: localized("Editorial", "Editorial", "Эдиториал"),
+    role: localized("Image Direction", "Image Direction", "Image direction"),
+    category: localized("Editorial", "Editorial", "Editorial"),
     location: localized("Digital Studio", "Digital Studio", "Digital Studio"),
     excerpt: localized(
       "A dystopian image world built from metallic light, ash tones, and post-human silhouettes.",
       "Eine dystopische Bildwelt aus metallischem Licht, Aschetönen und posthumanen Silhouetten.",
-      "Дистопический визуальный мир, построенный из металлического света, пепельных тонов и постчеловеческих силуэтов.",
+      "Дистопический визуальный мир из металлического света, пепельных тонов и постчеловеческих силуэтов.",
     ),
     statement: localized(
       "Fashion as survival language in a synthetic ruin.",
@@ -187,8 +187,8 @@ const projectRecords: LocalizedProjectRecord[] = [
     ),
     description: localized(
       "Cyber Wasteland frames darkness and industrial texture as a polished editorial sequence with cinematic depth.",
-      "Cyber Wasteland rahmt Dunkelheit und industrielle Textur als polierte editoriale Sequenz mit filmischer Tiefe.",
-      "Cyber Wasteland оформляет тьму и индустриальную фактуру как выстроенную эдиториальную последовательность с кинематографической глубиной.",
+      "Cyber Wasteland inszeniert Dunkelheit und industrielle Textur als polierte Editorial-Sequenz mit filmischer Tiefe.",
+      "Cyber Wasteland подаёт тьму и индустриальную фактуру как выстроенную editorial-последовательность с кинематографической глубиной.",
     ),
     mood: localized(
       "Industrial haze, metallic dusk, controlled decay",
@@ -197,8 +197,8 @@ const projectRecords: LocalizedProjectRecord[] = [
     ),
     tags: localized(
       ["Editorial", "Direction", "Campaign"],
-      ["Editorial", "Direction", "Kampagne"],
-      ["Эдиториал", "Направление", "Кампания"],
+      ["Editorial", "Direction", "Campaign"],
+      ["Editorial", "Direction", "Campaign"],
     ),
     creditsLabel: localized("Project", "Projekt", "Проект"),
     blocks: [
@@ -264,18 +264,18 @@ const projectRecords: LocalizedProjectRecord[] = [
     ),
     title: localized("Arctica 3D", "Arctica 3D", "Arctica 3D"),
     season: localized("Concept", "Konzept", "Концепт"),
-    role: localized("3D Art Direction", "3D Art Direction", "3D-арт-дирекшн"),
-    category: localized("Digital Fashion", "Digitale Mode", "Цифровая мода"),
+    role: localized("3D Art Direction", "3D Art Direction", "3D art direction"),
+    category: localized("Digital Fashion", "Digital Fashion", "Digital fashion"),
     location: localized("Virtual Set", "Virtuelles Set", "Виртуальная сцена"),
     excerpt: localized(
       "A fully synthetic image language combining digital garment forms, scene design, and high-gloss rendering.",
-      "Eine vollständig synthetische Bildsprache, die digitale Kleidungsformen, Szenendesign und hochglänzendes Rendering verbindet.",
-      "Полностью синтетический визуальный язык, соединяющий цифровую форму одежды, сценографию и глянцевый рендер.",
+      "Eine vollständig synthetische Bildsprache aus digitalen Kleidungsformen, Szenendesign und hochglänzendem Rendering.",
+      "Полностью синтетический визуальный язык из цифровой формы одежды, сценографии и глянцевого рендера.",
     ),
     statement: localized(
       "Rendered worlds can carry couture tension when paced editorially.",
-      "Gerenderte Welten können couturehafte Spannung tragen, wenn sie editorial inszeniert werden.",
-      "Рендерные миры способны нести напряжение кутюра, если заданы в редакционном ритме.",
+      "Gerenderte Welten können Couture-Spannung tragen, wenn sie editorial inszeniert werden.",
+      "Рендер-миры способны нести couture-напряжение, если выстроены в editorial-ритме.",
     ),
     description: localized(
       "Arctica 3D builds a cinematic world through CGI silhouettes, experimental materials, and frozen atmospheres.",
@@ -289,8 +289,8 @@ const projectRecords: LocalizedProjectRecord[] = [
     ),
     tags: localized(
       ["3D", "Digital Fashion", "Worldbuilding"],
-      ["3D", "Digitale Mode", "Worldbuilding"],
-      ["3D", "Цифровая мода", "Миростроение"],
+      ["3D", "Digital Fashion", "Worldbuilding"],
+      ["3D", "Digital fashion", "Worldbuilding"],
     ),
     creditsLabel: localized("Project", "Projekt", "Проект"),
     blocks: [
@@ -348,14 +348,14 @@ const projectRecords: LocalizedProjectRecord[] = [
     role: localized(
       "Creative Direction",
       "Creative Direction",
-      "Креативное направление",
+      "Creative direction",
     ),
-    category: localized("Editorial", "Editorial", "Эдиториал"),
+    category: localized("Editorial", "Editorial", "Editorial"),
     location: localized("Studio", "Studio", "Студия"),
     excerpt: localized(
       "A high-volume editorial narrative balancing stark composition with tactile fashion framing.",
-      "Ein umfangreiches Editorial-Narrativ, das strenge Komposition mit taktiler Modeinszenierung ausbalanciert.",
-      "Масштабный редакционный нарратив, балансирующий жёсткую композицию и тактильную fashion-подачу.",
+      "Ein umfangreiches Editorial-Narrativ, das strenge Komposition mit sinnlichem Fashion-Styling ausbalanciert.",
+      "Масштабный editorial-нарратив, балансирующий строгую композицию и тактильную fashion-подачу.",
     ),
     statement: localized(
       "Precision and repetition shape a coherent visual code.",
@@ -364,8 +364,8 @@ const projectRecords: LocalizedProjectRecord[] = [
     ),
     description: localized(
       "Artica explores editorial rhythm at scale, combining structured portrait logic with movement and surface detail.",
-      "Artica untersucht editorischen Rhythmus im großen Maßstab und verbindet strukturierte Porträtlogik mit Bewegung und Oberflächendetail.",
-      "Artica исследует редакционный ритм в крупном масштабе, соединяя портретную структуру с движением и деталью поверхности.",
+      "Artica untersucht Editorial-Rhythmus im großen Maßstab und verbindet strukturierte Porträtlogik mit Bewegung und Oberflächendetail.",
+      "Artica исследует editorial-ритм в крупном масштабе, соединяя портретную структуру с движением и деталью поверхности.",
     ),
     mood: localized(
       "Sharp monochrome, polished edge, architectural posture",
@@ -374,8 +374,8 @@ const projectRecords: LocalizedProjectRecord[] = [
     ),
     tags: localized(
       ["Editorial", "Campaign", "Direction"],
-      ["Editorial", "Kampagne", "Direction"],
-      ["Эдиториал", "Кампания", "Направление"],
+      ["Editorial", "Campaign", "Direction"],
+      ["Editorial", "Campaign", "Direction"],
     ),
     creditsLabel: localized("Project", "Projekt", "Проект"),
     blocks: [
@@ -432,14 +432,14 @@ const projectRecords: LocalizedProjectRecord[] = [
       "Обложка лукбука.",
     ),
     title: localized("Lookbook", "Lookbook", "Lookbook"),
-    season: localized("Selection", "Selection", "Подборка"),
-    role: localized("Styling & Curation", "Styling & Kuration", "Стайлинг и кураторство"),
+    season: localized("Selection", "Selection", "Selection"),
+    role: localized("Styling & Curation", "Styling & Kuration", "Styling & curation"),
     category: localized("Lookbook", "Lookbook", "Lookbook"),
-    location: localized("Studio", "Studio", "Студия"),
+    location: localized("Studio", "Studio", "Studio"),
     excerpt: localized(
       "A curated sequence of looks focused on silhouette, texture, and movement.",
       "Eine kuratierte Sequenz von Looks mit Fokus auf Silhouette, Textur und Bewegung.",
-      "Кураторская последовательность образов с фокусом на силуэт, фактуру и движение.",
+      "Кураторская последовательность looks с фокусом на силуэт, фактуру и движение.",
     ),
     statement: localized(
       "Each frame is selected for cohesion, pace, and visual clarity.",
@@ -448,18 +448,18 @@ const projectRecords: LocalizedProjectRecord[] = [
     ),
     description: localized(
       "The Lookbook distills key images into a clean editorial run designed for quick overview and campaign context.",
-      "Das Lookbook verdichtet Schlüsselmotive zu einer klaren editorischen Sequenz für schnellen Überblick und Kampagnenkontext.",
-      "Лукбук собирает ключевые изображения в чистую редакционную последовательность для быстрого обзора и контекста кампании.",
+      "Das Lookbook verdichtet Schlüsselmotive zu einer klaren Editorial-Sequenz für schnellen Überblick und Kampagnenkontext.",
+      "Lookbook собирает ключевые изображения в чистую editorial-последовательность для быстрого обзора и контекста кампании.",
     ),
     mood: localized(
       "Editorial sequence, precision styling, visual rhythm",
-      "Editoriale Sequenz, präzises Styling, visueller Rhythmus",
-      "Редакционная последовательность, точный стайлинг, визуальный ритм",
+      "Editorial-Sequenz, präzises Styling, visueller Rhythmus",
+      "Editorial-последовательность, точный styling, визуальный ритм",
     ),
     tags: localized(
       ["Lookbook", "Styling", "Selection"],
-      ["Lookbook", "Styling", "Auswahl"],
-      ["Лукбук", "Стайлинг", "Подборка"],
+      ["Lookbook", "Styling", "Selection"],
+      ["Lookbook", "Styling", "Selection"],
     ),
     creditsLabel: localized("Project", "Projekt", "Проект"),
     blocks: [

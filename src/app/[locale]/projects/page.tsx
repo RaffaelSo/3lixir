@@ -16,11 +16,11 @@ const metadataCopy: Record<UISiteLocale, { title: string; description: string }>
   },
   de: {
     title: "Projekte",
-    description: "Ein kuratiertes Archiv aus Kampagnen, Editorials und Mode-Bildwelten.",
+    description: "Ein kuratiertes Archiv aus Campaigns, Editorials und Fashion-Bildwelten.",
   },
   ru: {
     title: "Проекты",
-    description: "Кураторский архив кампаний, эдиториалов и fashion-образов.",
+    description: "Кураторский архив campaigns, editorials и fashion-образов.",
   },
 };
 

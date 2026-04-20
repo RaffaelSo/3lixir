@@ -21,25 +21,25 @@ const copy = {
   de: {
     eyebrow: "Vision",
     headline:
-      "Eine visuelle Sprache, gegründet auf Zurückhaltung, Bildintelligenz und Sensibilität für die Fashion-Welt.",
+      "Eine visuelle Sprache aus Zurückhaltung, einem geschulten Bildgefühl und Gespür für die Fashion-Welt.",
     body:
-      "Der Ansatz ist editorial im Rhythmus und strategisch in der Absicht: markante visuelle Welten, die für Agenturen, Fotograf:innen, Stylist:innen und kulturell arbeitende Marken unmittelbar wirken.",
+      "Der Ansatz ist editorial im Rhythmus, strategisch in der Haltung: eigenständige Bildwelten, die für Agenturen, Fotograf:innen, Stylist:innen und Marken innerhalb der Kultur unmittelbar wirken.",
     items: [
-      "Kampagnenrichtung und saisonale Bildwelten",
+      "Creative Direction für Kampagnen und saisonale Bildwelten",
       "Editorial-Konzepte für Magazine und Fashion-Plattformen",
-      "Markenatmosphäre, Launch-Sprache und digitaler Identity-Ton",
+      "Markenhaltung, Launch-Tonalität und Identity für digitale Kanäle",
     ],
   },
   ru: {
     eyebrow: "Видение",
     headline:
-      "Визуальный язык, построенный на сдержанности, image intelligence и чувствительности к миру fashion.",
+      "Визуальный язык, построенный на сдержанности, точном чувстве образа и восприимчивости к fashion-миру.",
     body:
-      "Подход редакционен по ритму и стратегичен по намерению: создавать отдельные визуальные миры, которые мгновенно считываются агентствами, фотографами, стилистами и брендами внутри культуры.",
+      "Подход editorial по ритму и стратегический по замыслу: самостоятельные визуальные миры, которые мгновенно считываются агентствами, фотографами, стилистами и брендами внутри культуры.",
     items: [
-      "Направление кампаний и сезонные визуальные миры",
-      "Эдиториальные концепции для журналов и fashion-платформ",
-      "Атмосфера бренда, язык запуска и тон цифровой идентичности",
+      "Creative direction для кампаний и сезонных визуальных миров",
+      "Editorial-концепции для журналов и fashion-платформ",
+      "Настроение бренда, тон launch-моментов и identity для цифровых каналов",
     ],
   },
 } as const;

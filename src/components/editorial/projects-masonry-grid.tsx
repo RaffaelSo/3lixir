@@ -16,15 +16,15 @@ const copy = {
   },
   de: {
     eyebrow: "Archiv",
-    statement: "Ein bildgeführter Projektindex, kuratiert wie ein Magazin-Edit.",
+    statement: "Ein bildzentrierter Projektindex, kuratiert wie ein Magazin-Edit.",
     body:
-      "Die Übersicht bevorzugt Rhythmus, Maßstabswechsel und ruhige Metadaten, damit die Arbeiten ein Gefühl von Entdeckung behalten.",
+      "Die Übersicht setzt auf Rhythmus, Maßstabswechsel und ruhige Metadaten, damit die Arbeiten ein Gefühl von Entdeckung behalten.",
   },
   ru: {
     eyebrow: "Архив",
-    statement: "Индекс проектов, построенный через image-first и собранный как журнальный edit.",
+    statement: "Индекс проектов, выстроенный вокруг образа и собранный как журнальный edit.",
     body:
-      "Обзор держится на ритме, смене масштаба и тихих метаданных, чтобы работа сохраняла ощущение открытия.",
+      "Обзор держится на ритме, смене масштаба и сдержанных метаданных, чтобы работы сохраняли ощущение открытия.",
   },
 } as const;
 

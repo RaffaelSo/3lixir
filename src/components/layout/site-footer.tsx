@@ -15,13 +15,13 @@ const copy = {
   },
   de: {
     description:
-      "Berlin — Couture Fashion, experimentelles Design und bildgeführte Markenarbeit.",
-    reach: "Berlin / Weltweit",
+      "Berlin — Couture Fashion, experimentelles Design und bildzentrierte Markenarbeit.",
+    reach: "Berlin / weltweit",
   },
   ru: {
     description:
-      "Берлин — кутюрная мода, экспериментальный дизайн и визуально выстроенная работа с брендом.",
-    reach: "Берлин / Worldwide",
+      "Берлин — couture, экспериментальный дизайн и работа над брендом, выстроенная вокруг образа.",
+    reach: "Берлин / по миру",
   },
 } as const;
 

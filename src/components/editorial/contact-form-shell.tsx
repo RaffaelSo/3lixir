@@ -30,35 +30,35 @@ const copy = {
   de: {
     eyebrow: "Briefing",
     intro:
-      "Das Kontaktformular ist vorübergehend deaktiviert. Für aktuelle Anfragen bitte direkt per E-Mail schreiben.",
+      "Das Kontaktformular ist aktuell deaktiviert. Anfragen laufen direkt per E-Mail.",
     name: "Name",
-    namePlaceholder: "Dein Name",
+    namePlaceholder: "Name",
     email: "E-Mail",
     emailPlaceholder: "name@studio.com",
     outline: "Projektüberblick",
     outlinePlaceholder:
-      "Kampagne, Editorial, Launch, Timing, Stimmung, Referenzen...",
+      "Campaign, Editorial, Launch, Timing, Mood, Referenzen …",
     note:
       "Antworten werden persönlich per E-Mail bearbeitet. Timing, Format und visuelle Referenzen helfen beim Einordnen.",
     disabledNotice:
-      "Formularübermittlungen sind aktuell deaktiviert. Bitte nutze den direkten E-Mail-Kontakt unten.",
+      "Formularübermittlungen sind derzeit deaktiviert — bitte den direkten E-Mail-Kontakt unten nutzen.",
     cta: "E-Mail schreiben",
   },
   ru: {
     eyebrow: "Бриф",
     intro:
-      "Форма обратной связи временно отключена. Для текущих запросов пишите напрямую по электронной почте.",
+      "Форма обратной связи сейчас отключена. Запросы — напрямую по email.",
     name: "Имя",
-    namePlaceholder: "Ваше имя",
-    email: "Почта",
+    namePlaceholder: "Имя",
+    email: "Email",
     emailPlaceholder: "name@studio.com",
     outline: "Описание проекта",
     outlinePlaceholder:
-      "Кампания, эдиториал, запуск, сроки, настроение, референсы...",
+      "Campaign, editorial, launch, сроки, mood, референсы …",
     note:
-      "Ответы обрабатываются лично по электронной почте. Укажите сроки, формат и важные визуальные референсы.",
+      "Ответы обрабатываются лично по email. Сроки, формат и визуальные референсы помогают быстрее разобраться.",
     disabledNotice:
-      "Отправка через форму сейчас отключена. Используйте прямой email ниже.",
+      "Отправка через форму сейчас отключена — пожалуйста, используйте прямой email ниже.",
     cta: "Написать email",
   },
 } as const;

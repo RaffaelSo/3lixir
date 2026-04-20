@@ -19,20 +19,20 @@ const copy = {
   de: {
     eyebrow: "Kollaborationen",
     statement:
-      "Offen für Kampagnen, Editorials und Markenwelten, die eine schärfere kulturelle Präsenz brauchen.",
+      "Offen für Campaigns, Editorials und Markenwelten, die eine schärfere kulturelle Präsenz brauchen.",
     body:
-      "Für Aufträge, kreative Partnerschaften und visuelle Identitätsarbeit werden Anfragen persönlich betreut.",
-    contact: "Kontakt aufnehmen",
-    archive: "Archiv ansehen",
+      "Anfragen zu Aufträgen, kreativen Partnerschaften und Identity-Arbeit werden persönlich bearbeitet.",
+    contact: "Kontakt",
+    archive: "Archiv",
   },
   ru: {
     eyebrow: "Коллаборации",
     statement:
-      "Открыто для кампаний, эдиториалов и бренд-миров, которым нужна более острая культурная плотность.",
+      "Открыто для campaigns, editorials и бренд-миров, которым нужно более чёткое культурное присутствие.",
     body:
-      "Запросы по заказам, креативным партнёрствам и визуальной идентичности обрабатываются лично.",
-    contact: "Связаться",
-    archive: "Смотреть архив",
+      "Запросы по заказам, креативным партнёрствам и работе над identity обрабатываются лично.",
+    contact: "Контакт",
+    archive: "Архив",
   },
 } as const;
 

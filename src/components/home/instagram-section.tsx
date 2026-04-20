@@ -18,17 +18,17 @@ const copy = {
   de: {
     heading: "Instagram",
     body:
-      "Folge 3liksir auf Instagram für Kampagnen, Prozess und neue Arbeiten — dieselbe visuelle Welt wie auf dieser Site, in Echtzeit aktualisiert. Instagram ist der Hauptkanal.",
-    aside: "Außerdem auf",
+      "Auf Instagram: Kampagnen, Prozess und neue Arbeiten — dieselbe visuelle Welt wie hier auf der Site, in Echtzeit. Instagram ist der Hauptkanal.",
+    aside: "Auch auf",
     tail: "Kurzclips; Instagram bleibt der Hauptkanal.",
     linkLabel: "@3liksir auf Instagram",
   },
   ru: {
     heading: "Instagram",
     body:
-      "Следите за 3liksir в Instagram: кампании, процесс и новые работы — тот же визуальный мир, что и на сайте, но в реальном времени. Instagram — основной канал.",
+      "В Instagram: кампании, процесс и новые работы — тот же визуальный мир, что и на сайте, но в реальном времени. Instagram — основной канал.",
     aside: "Также в",
-    tail: "короткие клипы; Instagram остаётся главным каналом.",
+    tail: "короткие клипы; Instagram остаётся основным каналом.",
     linkLabel: "@3liksir в Instagram",
   },
 } as const;
