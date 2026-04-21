@@ -42,7 +42,7 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
             flip && "lg:order-2",
           )}
         >
-          <div className="editorial-crop image-vignette-soft absolute inset-0">
+          <div className="featured-image-frame editorial-crop image-vignette-soft absolute inset-0">
             <Image
               src={project.heroImage}
               alt={project.heroAlt}

@@ -153,6 +153,20 @@ img {
   background: radial-gradient(ellipse 90% 85% at 50% 45%, transparent 45%, rgba(2, 4, 10, 0.28) 100%);
 }
 
+.featured-image-frame::before {
+  background:
+    linear-gradient(180deg, rgba(4, 5, 10, 0.04) 0%, transparent 42%, transparent 78%, rgba(3, 5, 12, 0.12) 100%),
+    linear-gradient(90deg, rgba(158, 182, 217, 0.025) 0%, transparent 34%, transparent 76%, rgba(4, 6, 12, 0.04) 100%);
+}
+
+.featured-image-frame.image-vignette-soft::after {
+  background: radial-gradient(ellipse 94% 88% at 50% 45%, transparent 62%, rgba(2, 4, 10, 0.12) 100%);
+}
+
+.featured-image-frame > img {
+  filter: brightness(1.16) contrast(1.04) saturate(1.04);
+}
+
 /* Text links: editorial underline, not startup buttons */
 .link-editorial {
   position: relative;
