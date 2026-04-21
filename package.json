@@ -19,7 +19,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "pw:smoke": "node scripts/playwright-smoke.mjs"
+    "pw:smoke": "node scripts/playwright-smoke.mjs",
+    "pw:smoke:live": "PW_SMOKE_URL=https://3liksir.site/en node scripts/playwright-smoke.mjs",
+    "verify:quick": "npm run lint && npx tsc --noEmit && npm run pw:smoke"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

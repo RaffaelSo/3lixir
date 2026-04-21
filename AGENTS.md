@@ -21,6 +21,9 @@ The site presents curated creative work in a cold, cinematic, magazine-inspired 
 - `npm run build` creates the production build
 - `npm run start` runs the production build
 - `npm run lint` runs ESLint
+- `npm run pw:smoke` checks `http://localhost:3000/en` with Playwright, captures screenshots, and fails if the homepage Featured image is too dark
+- `npm run pw:smoke:live` runs the same visual smoke check against `https://3liksir.site/en`
+- `npm run verify:quick` runs lint, TypeScript, and the local Playwright smoke check; start `npm run dev` in another terminal first
 
 ## Project Structure
 
@@ -67,7 +70,7 @@ If content changes are requested, they should usually happen in `src/data/projec
 - Path alias `@/*` maps to `src/*`
 - All imagery is served from the local `public/images/...` tree; no remote image hosts are allow-listed in `next.config.ts`
 - The contact form in `src/components/editorial/contact-form-shell.tsx` is currently presentational only; submissions are hard-disabled unless `CONTACT_FORM_ENABLED=true`
-- No automated test setup is currently configured in `package.json`
+- Playwright smoke coverage is available via `npm run pw:smoke`; it expects a local dev server on `http://localhost:3000` unless `PW_SMOKE_URL` is set
 
 ## Image Performance
 
