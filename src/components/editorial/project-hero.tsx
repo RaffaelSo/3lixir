@@ -53,6 +53,11 @@ export function ProjectHero({ project }: ProjectHeroProps) {
               fill
               priority
               sizes="(min-width: 1720px) 1560px, (min-width: 1280px) calc(100vw - 10rem), (min-width: 1024px) calc(100vw - 8rem), (min-width: 640px) calc(100vw - 5rem), calc(100vw - 3rem)"
+              style={
+                project.heroObjectPosition
+                  ? { objectPosition: project.heroObjectPosition }
+                  : undefined
+              }
               className={cn(
                 "saturate-[0.9]",
                 imageFit === "contain"

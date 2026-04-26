@@ -10,7 +10,7 @@ const copy = {
   en: {
     heading: "Instagram",
     body:
-      "Follow 3liksir on Instagram for campaigns, process, and new work — the same visual world as this site, updated in real time. Instagram is the primary channel.",
+      "Follow 3liksir on Instagram for campaigns, process, and new work - the same visual world as this site, updated in real time. Instagram is the primary channel.",
     aside: "Also on",
     tail: "short clips; Instagram remains the main channel.",
     linkLabel: "@3liksir on Instagram",
@@ -18,7 +18,7 @@ const copy = {
   de: {
     heading: "Instagram",
     body:
-      "Auf Instagram: Kampagnen, Prozess und neue Arbeiten — dieselbe visuelle Welt wie hier auf der Site, in Echtzeit. Instagram ist der Hauptkanal.",
+      "Auf Instagram: Kampagnen, Prozess und neue Arbeiten - dieselbe visuelle Welt wie hier auf der Site, in Echtzeit. Instagram ist der Hauptkanal.",
     aside: "Auch auf",
     tail: "Kurzclips; Instagram bleibt der Hauptkanal.",
     linkLabel: "@3liksir auf Instagram",
@@ -26,7 +26,7 @@ const copy = {
   ru: {
     heading: "Instagram",
     body:
-      "В Instagram: кампании, процесс и новые работы — тот же визуальный мир, что и на сайте, но в реальном времени. Instagram — основной канал.",
+      "В Instagram: кампании, процесс и новые работы - тот же визуальный мир, что и на сайте, но в реальном времени. Instagram - основной канал.",
     aside: "Также в",
     tail: "короткие клипы; Instagram остаётся основным каналом.",
     linkLabel: "@3liksir в Instagram",
@@ -34,7 +34,7 @@ const copy = {
 } as const;
 
 /**
- * Visible, crawlable Instagram callout (text + link in the DOM — no hidden SEO tricks).
+ * Visible, crawlable Instagram callout (text + link in the DOM - no hidden SEO tricks).
  */
 export function InstagramSection() {
   const { locale } = useSiteLocale();
@@ -66,7 +66,7 @@ export function InstagramSection() {
             >
               TikTok @3liksir
             </Link>{" "}
-            — {text.tail}
+            - {text.tail}
           </p>
         </div>
         <p className="shrink-0">

@@ -42,6 +42,7 @@ export type Project = {
   heroImage: string;
   heroAlt: string;
   heroFit?: "cover" | "contain";
+  heroObjectPosition?: string;
   mood: string;
   tags: string[];
   featured: boolean;

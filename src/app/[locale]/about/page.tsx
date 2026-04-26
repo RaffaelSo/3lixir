@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { AboutHero } from "@/components/editorial/about-hero";
 import { AboutMethodSection } from "@/components/editorial/about-method-section";
 import { FinalCtaBand } from "@/components/editorial/final-cta-band";
+import { PortraitPanel } from "@/components/editorial/portrait-panel";
 import { VisionStatement } from "@/components/editorial/vision-statement";
 import type { UISiteLocale } from "@/lib/i18n-config";
 import { buildLocalizedMetadata } from "@/lib/localized-metadata";
@@ -51,6 +52,7 @@ export default function LocalizedAboutPage() {
     <>
       <AboutHero />
       <VisionStatement />
+      <PortraitPanel />
       <AboutMethodSection />
       <FinalCtaBand />
     </>

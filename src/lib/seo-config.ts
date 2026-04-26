@@ -39,11 +39,11 @@ export const siteConfig = {
   /** Open Graph title can match or tighten for sharing. */
   ogTitle: "3liksir – Couture Fashion Designer Berlin",
   ogDescription:
-    "Berlin couture & experimental fashion — sculptural silhouettes, editorial worlds, and collaborations. Official site.",
+    "Berlin couture & experimental fashion - sculptural silhouettes, editorial worlds, and collaborations. Official site.",
   /** Path served by `src/app/opengraph-image.tsx` (absolute URL resolved via `metadataBase`). */
   ogImagePath: "/opengraph-image" as const,
   ogImageAlt:
-    "3liksir — couture fashion designer based in Berlin, editorial portrait.",
+    "3liksir - couture fashion designer based in Berlin, editorial portrait.",
   instagramUrl: "https://www.instagram.com/3liksir/",
   /** Secondary social; list in UI only once (homepage social section). */
   tiktokUrl: "https://www.tiktok.com/@3liksir",

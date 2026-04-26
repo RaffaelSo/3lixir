@@ -28,7 +28,7 @@ export function HeroEditorial({ project }: HeroEditorialProps) {
               00
             </span>
             <div className="min-w-0 border-l border-[var(--line-cold)] pl-6 sm:pl-8">
-              <Eyebrow>Image direction — campaigns & editorials</Eyebrow>
+              <Eyebrow>Image direction - campaigns & editorials</Eyebrow>
               <h1 className="font-display-editorial mt-8 max-w-[18ch] text-[clamp(2.75rem,7.2vw,6.75rem)] leading-[0.9] tracking-[-0.055em] text-balance text-[var(--foreground)]">
                 <span className="block">Atmosphere,</span>
                 <span className="mt-1 block text-white/88 sm:mt-2">
@@ -37,7 +37,7 @@ export function HeroEditorial({ project }: HeroEditorialProps) {
               </h1>
               <p className="mt-10 max-w-md text-[0.9375rem] leading-[1.75] tracking-[0.02em] text-white/48 sm:mt-12">
                 3liksir is a digital editorial space for avant-garde fashion
-                image systems — built for agencies, brands, and collaborators
+                image systems - built for agencies, brands, and collaborators
                 who read visual nuance the way others read copy.
               </p>
 

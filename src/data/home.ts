@@ -21,24 +21,24 @@ const worldImageSrc = toOptimizedProjectPublicPath(
 
 const homeContentByLocale = {
   manifesto: {
-    eyebrow: localized("Brand", "Brand", "Бренд"),
+    eyebrow: localized("Design approach", "Designansatz", "Подход к дизайну"),
     statement: localized(
-      "Couture as sculpture — garments as bodies of light, shadow, and tension.",
-      "Couture als Skulptur — Kleidungsstücke als Körper aus Licht, Schatten und Spannung.",
-      "Couture как скульптура — одежда как тело из света, тени и напряжения.",
+      "Couture as sculpture - garments as bodies of light, shadow, and movement.",
+      "Couture als Skulptur - Kleidungsstücke als Körper aus Licht, Schatten und Bewegung.",
+      "Couture как скульптура - одежда как тело из света, тени и движения.",
     ),
     paragraphs: localized(
       [
-        "3liksir is a Berlin studio for couture fashion and experimental design. Work moves between precision tailoring, cyber-informed silhouette, and materials that refuse the ordinary.",
-        "The language is sculptural, severe when needed, and always image-first: fewer words, more atmosphere.",
+        "3liksir is a Berlin-based couture fashion designer who treats clothing as artwork - inspired by nature, technology, and futuristic pop culture.",
+        "Work develops experimental textiles and silhouettes, combining traditional techniques with sustainable practice, upcycling, and innovative technology toward a bold, future-forward visual language.",
       ],
       [
-        "3liksir ist ein Berliner Studio für Couture Fashion und experimentelles Design. Die Arbeit bewegt sich zwischen präzisem Tailoring, cyber-geprägten Silhouetten und Materialien abseits des Gewöhnlichen.",
-        "Die Sprache ist skulptural, dort streng, wo es nötig ist, und immer bildzentriert: weniger Worte, mehr Atmosphäre.",
+        "3liksir arbeitet in Berlin an Couture Fashion und begreift Kleidung als künstlerisches Werk: mit Inspiration aus Natur, Technologie und futuristischer Popkultur.",
+        "Im Fokus stehen experimentelle Textilien und Silhouetten: traditionelle Techniken, Nachhaltigkeit, Upcycling und innovative Technologien - in einer klar fokussierten, zukunftsgerichteten Bildsprache.",
       ],
       [
-        "3liksir — берлинская студия couture-моды и экспериментального дизайна. Работа строится на точном tailoring, кибер-силуэтах и материалах, выходящих за рамки привычного.",
-        "Язык скульптурный, строгий там, где это нужно, и всегда выстроен вокруг образа: меньше слов, больше атмосферы.",
+        "3liksir - берлинский дизайнер в сфере couture, для которого одежда - произведение искусства: вдохновение в природе, технологиях и футуристичной поп-культуре.",
+        "В фокусе - экспериментальные текстили и силуэты: сочетание традиционных приёмов с устойчивыми практиками, upcycling и инновационными технологиями, с яркой, ориентированной на будущее визуальностью.",
       ],
     ),
   },
@@ -52,7 +52,7 @@ const homeContentByLocale = {
     lines: localized(
       [
         "A universe built from chrome dusk, ritual posture, and clothes that behave like architecture.",
-        "Not nostalgia — a forward grammar for bodies, cameras, and the spaces between them.",
+        "Not nostalgia - a forward grammar for bodies, cameras, and the spaces between them.",
       ],
       [
         "Ein Universum aus Chromdämmerung, ritueller Haltung und Kleidung, die sich wie Architektur verhält.",
@@ -64,9 +64,9 @@ const homeContentByLocale = {
       ],
     ),
     imageAlt: localized(
-      "Artica — frozen sculptural world.",
-      "Artica — gefrorene skulpturale Welt.",
-      "Artica — замороженный скульптурный мир.",
+      "Artica - frozen sculptural world.",
+      "Artica - gefrorene skulpturale Welt.",
+      "Artica - замороженный скульптурный мир.",
     ),
   },
   contact: {

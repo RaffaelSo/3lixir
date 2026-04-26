@@ -41,13 +41,13 @@ const copy = {
     note:
       "Antworten werden persönlich per E-Mail bearbeitet. Timing, Format und visuelle Referenzen helfen beim Einordnen.",
     disabledNotice:
-      "Formularübermittlungen sind derzeit deaktiviert — bitte den direkten E-Mail-Kontakt unten nutzen.",
+      "Formularübermittlungen sind derzeit deaktiviert - bitte den direkten E-Mail-Kontakt unten nutzen.",
     cta: "E-Mail schreiben",
   },
   ru: {
     eyebrow: "Бриф",
     intro:
-      "Форма обратной связи сейчас отключена. Запросы — напрямую по email.",
+      "Форма обратной связи сейчас отключена. Запросы - напрямую по email.",
     name: "Имя",
     namePlaceholder: "Имя",
     email: "Email",
@@ -58,7 +58,7 @@ const copy = {
     note:
       "Ответы обрабатываются лично по email. Сроки, формат и визуальные референсы помогают быстрее разобраться.",
     disabledNotice:
-      "Отправка через форму сейчас отключена — пожалуйста, используйте прямой email ниже.",
+      "Отправка через форму сейчас отключена - пожалуйста, используйте прямой email ниже.",
     cta: "Написать email",
   },
 } as const;

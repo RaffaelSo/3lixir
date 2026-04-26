@@ -10,17 +10,17 @@ import { siteConfig } from "@/lib/seo-config";
 const copy = {
   en: {
     description:
-      "Berlin — couture fashion, experimental design, and image-led brand work.",
+      "Berlin - couture fashion, experimental design, and image-led brand work.",
     reach: "Berlin / Worldwide",
   },
   de: {
     description:
-      "Berlin — Couture Fashion, experimentelles Design und bildzentrierte Markenarbeit.",
+      "Berlin - Couture Fashion, experimentelles Design und bildzentrierte Markenarbeit.",
     reach: "Berlin / weltweit",
   },
   ru: {
     description:
-      "Берлин — couture, экспериментальный дизайн и работа над брендом, выстроенная вокруг образа.",
+      "Берлин - couture, экспериментальный дизайн и работа над брендом, выстроенная вокруг образа.",
     reach: "Берлин / по миру",
   },
 } as const;

@@ -9,25 +9,26 @@ import { toOptimizedProjectPublicPath } from "@/lib/optimized-project-image";
 
 const copy = {
   en: {
-    ariaLabel: "3liksir — introduction",
+    ariaLabel: "3liksir - introduction",
     eyebrow: "Couture · Berlin",
-    tagline: "Berlin-based couture fashion / experimental design / styling",
+    tagline:
+      "Berlin-based designer for couture fashion & experimental design",
     ctaWork: "View work",
     ctaContact: "Contact / collaborate",
     imageAlt: "Lookbook cover image.",
   },
   de: {
-    ariaLabel: "3liksir — Einführung",
+    ariaLabel: "3liksir - Einführung",
     eyebrow: "Couture · Berlin",
-    tagline: "Couture Fashion · experimentelles Design · Styling aus Berlin",
+    tagline: "Couture Fashion & experimentelles Design - in Berlin",
     ctaWork: "Arbeiten ansehen",
     ctaContact: "Kontakt & Kollaboration",
     imageAlt: "Lookbook-Cover.",
   },
   ru: {
-    ariaLabel: "3liksir — вступление",
+    ariaLabel: "3liksir - вступление",
     eyebrow: "Couture · Берлин",
-    tagline: "Couture · экспериментальный дизайн · styling из Берлина",
+    tagline: "Couture и experimental design - в Берлине",
     ctaWork: "Смотреть работы",
     ctaContact: "Контакт и коллаборации",
     imageAlt: "Обложка lookbook.",

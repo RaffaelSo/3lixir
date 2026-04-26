@@ -13,7 +13,7 @@ const portraitImage = toOptimizedProjectPublicPath(
 
 const copy = {
   en: {
-    alt: "3liksir portrait detail — fashion creative direction.",
+    alt: "3liksir portrait detail - fashion creative direction.",
     eyebrow: "Identity",
     title: "About the designer",
     intro:
@@ -34,7 +34,7 @@ const copy = {
       "Dark elegance, cyber-informed silhouettes, severe atmosphere, and high-contrast visual memory.",
   },
   de: {
-    alt: "3liksir Portrait-Detail — Fashion Creative Direction.",
+    alt: "3liksir Portrait-Detail - Fashion Creative Direction.",
     eyebrow: "Identität",
     title: "About the designer",
     intro:
@@ -55,7 +55,7 @@ const copy = {
       "Dunkle Eleganz, cyber-informierte Silhouetten, strenge Atmosphäre und kontrastreiche visuelle Erinnerung.",
   },
   ru: {
-    alt: "Портретная деталь 3liksir — fashion creative direction.",
+    alt: "Портретная деталь 3liksir - fashion creative direction.",
     eyebrow: "Идентичность",
     title: "About the designer",
     intro:

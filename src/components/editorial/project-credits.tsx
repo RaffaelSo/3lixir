@@ -22,14 +22,14 @@ const copy = {
   de: {
     eyebrow: "Credits",
     body:
-      "Eine knappe Auflistung zu Kollaboration und Produktionskontext — bewusst zurückgenommen, damit die Bilder im Vordergrund bleiben.",
+      "Eine knappe Auflistung zu Kollaboration und Produktionskontext - bewusst zurückgenommen, damit die Bilder im Vordergrund bleiben.",
     back: "Zurück zum Archiv",
     discuss: "Auftrag besprechen",
   },
   ru: {
     eyebrow: "Credits",
     body:
-      "Краткий список коллабораций и производственного контекста — намеренно сдержанный, чтобы на первом плане оставались изображения.",
+      "Краткий список коллабораций и производственного контекста - намеренно сдержанный, чтобы на первом плане оставались изображения.",
     back: "Назад в архив",
     discuss: "Обсудить заказ",
   },
