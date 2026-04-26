@@ -41,6 +41,7 @@ export type Project = {
   description: string;
   heroImage: string;
   heroAlt: string;
+  heroFit?: "cover" | "contain";
   mood: string;
   tags: string[];
   featured: boolean;

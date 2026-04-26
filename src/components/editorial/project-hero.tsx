@@ -7,6 +7,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { Eyebrow, MetaList } from "@/components/editorial/typography";
 import { Project } from "@/types/project";
 import { useSiteLocale } from "@/contexts/site-locale-context";
+import { cn } from "@/lib/utils";
 
 type ProjectHeroProps = {
   project: Project;
@@ -21,6 +22,7 @@ const labels = {
 export function ProjectHero({ project }: ProjectHeroProps) {
   const { locale } = useSiteLocale();
   const text = labels[locale];
+  const imageFit = project.heroFit ?? "cover";
 
   return (
     <SectionShell className="py-14 sm:py-20 lg:py-24">
@@ -51,7 +53,12 @@ export function ProjectHero({ project }: ProjectHeroProps) {
               fill
               priority
               sizes="(min-width: 1720px) 1560px, (min-width: 1280px) calc(100vw - 10rem), (min-width: 1024px) calc(100vw - 8rem), (min-width: 640px) calc(100vw - 5rem), calc(100vw - 3rem)"
-              className="object-cover object-[center_22%] saturate-[0.9]"
+              className={cn(
+                "saturate-[0.9]",
+                imageFit === "contain"
+                  ? "object-contain object-center"
+                  : "object-cover object-[center_22%]",
+              )}
             />
           </div>
         </Reveal>

@@ -45,6 +45,7 @@ type LocalizedProjectRecord = {
   statement: LocalizedValue<string>;
   description: LocalizedValue<string>;
   mood: LocalizedValue<string>;
+  heroFit?: "cover" | "contain";
   tags: LocalizedValue<string[]>;
   creditsLabel: LocalizedValue<string>;
   credits?: LocalizedValue<ProjectCredit[]>;
@@ -258,6 +259,7 @@ const projectRecords: LocalizedProjectRecord[] = [
     featured: true,
     gridClass: "md:col-span-5 md:row-span-2",
     heroImage: asset("arctica-3d", "desigh 3 +scene_6.PNG"),
+    heroFit: "contain",
     heroAlt: localized(
       "Arctica 3D hero image.",
       "Arctica-3D-Hero-Bild.",
@@ -518,6 +520,7 @@ function resolveProject(
     description: pick(record.description, locale),
     heroImage: record.heroImage,
     heroAlt: pick(record.heroAlt, locale),
+    heroFit: record.heroFit,
     mood: pick(record.mood, locale),
     tags: pick(record.tags, locale),
     featured: record.featured,
