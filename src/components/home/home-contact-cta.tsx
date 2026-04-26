@@ -17,7 +17,7 @@ export function HomeContactCta() {
     <SectionShell
       as="section"
       id="contact"
-      className="scroll-mt-[5.5rem] border-t border-white/[0.07] pb-28 pt-24 sm:pb-36 sm:pt-28 lg:pb-44 lg:pt-32"
+      className="scroll-mt-[5.5rem] border-t border-white/[0.07] pb-24 pt-14 sm:pb-28 sm:pt-20 lg:pb-32 lg:pt-24"
       aria-labelledby="contact-heading"
     >
       <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">

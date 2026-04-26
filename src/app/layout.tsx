@@ -60,10 +60,20 @@ export default function RootLayout({
           </div>
 
           <AppShellProviders>
+            <a
+              href="#main"
+              className="sr-only focus:fixed focus:left-6 focus:top-6 focus:z-[100] focus:not-sr-only focus:border focus:border-white/15 focus:bg-[#040508] focus:px-4 focus:py-3 focus:font-[family-name:var(--font-mono)] focus:text-[0.62rem] focus:font-medium focus:uppercase focus:tracking-[0.28em] focus:text-white"
+            >
+              Skip to main content
+            </a>
             <SiteHeader />
 
             <PageTransition>
-              <main className="relative z-10 pt-[4.75rem] sm:pt-[5.25rem]">
+              <main
+                id="main"
+                tabIndex={-1}
+                className="relative z-10 pt-[4.75rem] focus:outline-none sm:pt-[5.25rem]"
+              >
                 {children}
               </main>
               <SiteFooter />

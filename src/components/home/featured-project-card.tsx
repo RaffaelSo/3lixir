@@ -22,73 +22,73 @@ const viewCopy = {
 export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps) {
   const { locale } = useSiteLocale();
   const flip = index % 2 === 1;
+  const first = index === 0;
+  const imagePosition = index === 1 ? "object-[center_42%]" : "object-[center_30%]";
+  const imageSizes = flip
+    ? "(min-width: 1720px) 650px, (min-width: 1024px) 42vw, 100vw"
+    : "(min-width: 1720px) 980px, (min-width: 1024px) 63vw, 100vw";
 
   return (
-    <article>
+    <article className="relative">
       <LocaleLink
         href={`/projects/${project.slug}`}
         className={cn(
-          "group grid min-h-0 grid-cols-1 gap-0 lg:items-stretch",
+          "group grid min-h-0 grid-cols-1 gap-10 lg:items-stretch",
           flip
-            ? "lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)]"
-            : "lg:grid-cols-[minmax(0,1.18fr)_minmax(0,0.82fr)]",
+            ? "lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] lg:gap-14 xl:gap-20"
+            : "lg:grid-cols-[minmax(0,0.63fr)_minmax(0,0.37fr)] lg:gap-14 xl:gap-20",
         )}
       >
         <div
           className={cn(
             "relative isolate w-full overflow-hidden bg-[#06080c]",
-            "aspect-[4/5] min-h-[18rem] sm:min-h-[20rem]",
-            "lg:aspect-[3/4] lg:min-h-[min(72svh,42rem)] lg:w-full",
+            first
+              ? "aspect-[5/4] min-h-[22rem] sm:min-h-[28rem] lg:aspect-[16/11] lg:min-h-[min(70svh,43rem)]"
+              : "aspect-[4/5] min-h-[22rem] sm:min-h-[26rem] lg:aspect-[16/10] lg:min-h-[min(62svh,38rem)]",
             flip && "lg:order-2",
           )}
         >
-          <div className="featured-image-frame editorial-crop image-vignette-soft relative h-full min-h-[18rem] w-full sm:min-h-[20rem] lg:min-h-[min(72svh,42rem)]">
+          <div
+            className={cn(
+              "featured-image-frame editorial-crop image-vignette-soft relative h-full w-full",
+              first
+                ? "min-h-[22rem] sm:min-h-[28rem] lg:min-h-[min(70svh,43rem)]"
+                : "min-h-[22rem] sm:min-h-[26rem] lg:min-h-[min(62svh,38rem)]",
+            )}
+          >
             <Image
               src={project.heroImage}
               alt={project.heroAlt}
               fill
-              priority={index === 0}
-              loading={index === 0 ? "eager" : "lazy"}
-              sizes="(min-width: 1720px) 920px, (min-width: 1024px) 62vw, 100vw"
-              className="z-0 object-cover object-[center_30%] transition duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.018]"
+              sizes={imageSizes}
+              className={cn(
+                "z-0 object-cover transition duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.018]",
+                imagePosition,
+              )}
             />
           </div>
         </div>
 
         <div
           className={cn(
-            "flex min-h-0 flex-col justify-between gap-10 border border-white/[0.05] bg-[rgba(3,4,8,0.72)] px-7 py-10 sm:px-9 sm:py-12 lg:min-h-[min(78svh,44rem)] lg:gap-9 lg:px-10 lg:py-14",
+            "flex min-h-0 flex-col justify-center gap-10 border-t border-white/[0.055] px-1 py-8 sm:px-2 lg:min-h-[min(62svh,38rem)] lg:border-y lg:border-l-0 lg:border-r-0 lg:px-0 lg:py-12",
             flip && "lg:order-1",
           )}
         >
           <div>
-            <p className="font-[family-name:var(--font-mono)] text-[0.58rem] font-medium uppercase tracking-[0.36em] text-white/32">
+            <p className="font-[family-name:var(--font-mono)] text-[0.56rem] font-medium uppercase tracking-[0.44em] text-white/28">
               {project.category} · {project.year}
             </p>
-            <h3 className="font-display-editorial mt-5 text-[clamp(2.25rem,5vw,4rem)] leading-[0.95] tracking-[-0.045em] text-white">
+            <h3 className="font-display-editorial mt-7 text-[clamp(3rem,5.8vw,5.5rem)] leading-[0.9] tracking-[-0.06em] text-white">
               {project.title}
             </h3>
-            <p className="mt-6 max-w-[26ch] text-[0.9375rem] leading-[1.72] tracking-[0.02em] text-white/52">
+            <p className="mt-8 max-w-[28ch] text-[1rem] leading-[1.85] tracking-[0.035em] text-white/45">
               {project.excerpt}
             </p>
           </div>
 
-          <div className="space-y-7 border-t border-white/[0.06] pt-7">
-            {project.credits.length > 0 ? (
-              <ul className="grid gap-3 sm:grid-cols-2">
-                {project.credits.slice(0, 4).map((c) => (
-                  <li
-                    key={`${project.slug}-${c.label}`}
-                    className="font-[family-name:var(--font-mono)] text-[0.58rem] uppercase tracking-[0.28em] text-white/28"
-                  >
-                    <span className="text-white/40">{c.label}</span>
-                    <span className="mx-2 text-white/15">—</span>
-                    <span className="text-white/55">{c.value}</span>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-            <p className="font-[family-name:var(--font-mono)] text-[0.58rem] font-medium uppercase tracking-[0.34em] text-[var(--accent-dim)] transition duration-700 group-hover:text-[var(--accent)]">
+          <div className="border-t border-white/[0.04] pt-7">
+            <p className="font-[family-name:var(--font-mono)] text-[0.58rem] font-medium uppercase tracking-[0.38em] text-[var(--accent-dim)] transition duration-700 group-hover:text-[var(--accent)]">
               {viewCopy[locale]}
             </p>
           </div>

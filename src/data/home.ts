@@ -14,9 +14,9 @@ const localized = <T>(en: T, de: T, ru: T): LocalizedValue<T> => ({
 const pick = <T>(value: LocalizedValue<T>, locale: UISiteLocale): T =>
   value[locale];
 
-/** Same lookbook frame as the homepage hero — local asset, no remote stock. */
+/** Distinct world frame to avoid repeating the homepage hero. */
 const worldImageSrc = toOptimizedProjectPublicPath(
-  "/images/projects/lookbook/COVERShin Jeong Hoon, @sh1nfoto (16).JPEG",
+  "/images/projects/artica/P001.JPEG",
 );
 
 const homeContentByLocale = {
@@ -64,9 +64,9 @@ const homeContentByLocale = {
       ],
     ),
     imageAlt: localized(
-      "Lookbook — sculptural silhouette.",
-      "Lookbook — skulpturale Silhouette.",
-      "Лукбук — скульптурный силуэт.",
+      "Artica — frozen sculptural world.",
+      "Artica — gefrorene skulpturale Welt.",
+      "Artica — замороженный скульптурный мир.",
     ),
   },
   contact: {

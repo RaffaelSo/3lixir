@@ -42,7 +42,7 @@ export function InstagramSection() {
 
   return (
     <section
-      className="border-y border-white/[0.06] py-16 sm:py-20"
+      className="border-y border-white/[0.06] py-14 sm:py-20 lg:py-24"
       aria-labelledby="instagram-heading"
     >
       <SectionShell className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-12">

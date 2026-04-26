@@ -6,6 +6,7 @@ import { HomeHero } from "@/components/home/home-hero";
 import { HomeManifesto } from "@/components/home/home-manifesto";
 import { HomeWorldCyber } from "@/components/home/home-world-cyber";
 import { InstagramSection } from "@/components/home/instagram-section";
+import { PortraitPanel } from "@/components/editorial/portrait-panel";
 import { buildLocalizedMetadata } from "@/lib/localized-metadata";
 import { isSiteLocale } from "@/lib/locale-routing";
 import type { UISiteLocale } from "@/lib/i18n-config";
@@ -40,6 +41,7 @@ export default function LocalizedHomePage() {
     <>
       <HomeHero />
       <HomeManifesto />
+      <PortraitPanel />
       <HomeFeaturedWork />
       <HomeWorldCyber />
       <InstagramSection />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useId, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { LocaleLink } from "@/components/layout/locale-link";
@@ -51,9 +51,10 @@ const copy = {
 export function SiteHeader() {
   const pathname = usePathname();
   const { locale } = useSiteLocale();
+  const menuId = useId();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const closeMenu = () => setIsOpen(false);
+  const closeMenu = useCallback(() => setIsOpen(false), []);
   const links = linkLabels[locale];
   const text = copy[locale];
   const normalizedPathname = stripLocaleFromPathname(pathname);
@@ -68,6 +69,18 @@ export function SiteHeader() {
 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeMenu();
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [closeMenu, isOpen]);
 
   return (
     <header
@@ -120,6 +133,7 @@ export function SiteHeader() {
             type="button"
             onClick={() => setIsOpen((open) => !open)}
             className="font-[family-name:var(--font-mono)] inline-flex text-[0.62rem] font-medium uppercase tracking-[0.34em] text-white/55 md:hidden"
+            aria-controls={menuId}
             aria-expanded={isOpen}
             aria-label={text.toggleNavigation}
           >
@@ -129,7 +143,10 @@ export function SiteHeader() {
       </div>
 
       {isOpen ? (
-        <div className="border-t border-white/[0.07] px-6 py-8 sm:px-10 md:hidden">
+        <div
+          id={menuId}
+          className="border-t border-white/[0.07] px-6 py-8 sm:px-10 md:hidden"
+        >
           <nav className="flex flex-col gap-5">
             {links.map((link) => (
               <LocaleLink

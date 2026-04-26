@@ -15,10 +15,10 @@ export function HomeWorldCyber() {
   return (
     <SectionShell
       as="section"
-      className="relative py-28 sm:py-36 lg:py-44"
+      className="relative py-14 sm:py-20 lg:py-24"
       aria-labelledby="world-heading"
     >
-      <div className="grid gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-20 xl:gap-28">
+      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 xl:gap-20">
         <Reveal>
           <Eyebrow>{content.eyebrow}</Eyebrow>
           <h2
@@ -27,7 +27,7 @@ export function HomeWorldCyber() {
           >
             {content.headline}
           </h2>
-          <div className="mt-12 space-y-8">
+          <div className="mt-9 space-y-6">
             {content.lines.map((line, i) => (
               <p
                 key={i}
@@ -41,7 +41,7 @@ export function HomeWorldCyber() {
 
         <Reveal delay={0.1} className="relative">
           <div className="relative aspect-[3/4] overflow-hidden lg:aspect-[4/5]">
-            <div className="editorial-crop image-vignette-cold absolute inset-0">
+            <div className="editorial-crop image-vignette-cold relative h-full min-h-[min(52svh,22rem)] w-full lg:min-h-[28rem]">
               <Image
                 src={content.image.src}
                 alt={content.image.alt}

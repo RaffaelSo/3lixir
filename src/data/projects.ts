@@ -1,6 +1,6 @@
 import type { UISiteLocale } from "@/lib/i18n-config";
 import { toOptimizedProjectPublicPath } from "@/lib/optimized-project-image";
-import { Project } from "@/types/project";
+import { Project, ProjectCredit } from "@/types/project";
 
 type LocalizedValue<T> = Record<UISiteLocale, T>;
 
@@ -47,6 +47,7 @@ type LocalizedProjectRecord = {
   mood: LocalizedValue<string>;
   tags: LocalizedValue<string[]>;
   creditsLabel: LocalizedValue<string>;
+  credits?: LocalizedValue<ProjectCredit[]>;
   blocks: LocalizedProjectBlock[];
 };
 
@@ -462,6 +463,11 @@ const projectRecords: LocalizedProjectRecord[] = [
       ["Lookbook", "Styling", "Selection"],
     ),
     creditsLabel: localized("Project", "Projekt", "Проект"),
+    credits: localized(
+      [{ label: "Photography", value: "Shin Jeong Hoon (@sh1nfoto)" }],
+      [{ label: "Fotografie", value: "Shin Jeong Hoon (@sh1nfoto)" }],
+      [{ label: "Фотография", value: "Shin Jeong Hoon (@sh1nfoto)" }],
+    ),
     blocks: [
       {
         type: "statement",
@@ -521,6 +527,7 @@ function resolveProject(
         label: pick(record.creditsLabel, locale),
         value: pick(record.title, locale),
       },
+      ...(record.credits ? pick(record.credits, locale) : []),
     ],
     blocks: record.blocks.map((block) => {
       if (block.type === "statement") {

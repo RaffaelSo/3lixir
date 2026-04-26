@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import {
+  defaultLocale,
   openGraphLocaleByLocale,
   siteLocales,
   type UISiteLocale,
@@ -17,9 +18,12 @@ type LocalizedMetadataOptions = {
 };
 
 function buildLanguageAlternates(pathname: string) {
-  return Object.fromEntries(
-    siteLocales.map((locale) => [locale, getCanonicalPath(localizePath(pathname, locale))]),
-  );
+  return {
+    ...Object.fromEntries(
+      siteLocales.map((locale) => [locale, getCanonicalPath(localizePath(pathname, locale))]),
+    ),
+    "x-default": getCanonicalPath(localizePath(pathname, defaultLocale)),
+  };
 }
 
 export function buildLocalizedMetadata({
